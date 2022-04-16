@@ -3,4 +3,4 @@
 * Christian Hernandez (@christian0a0hernandez)
 * Joseph Guzman (@Josephtheelder)
 * Steven Stansberry (@stevenpstansberry)
-* Inderpreet Singh (@)
+* Inderpreet Singh (@Singh1309)
