@@ -44,6 +44,8 @@
   1. User inputs query
   2. User performs search
   3. User is presented with no relevant search results.
+
+
 2. My Shopping List
 - **Pre-condition:** User is on a vinyl listing
 
@@ -61,6 +63,7 @@
  -**Alternate Sequence:** 
   1. User navigates to shopping cart list
   2. User removes certain items from shopping cart
+  
   
 3. Promotions 
 - **Pre-condition:** Item exists in store
