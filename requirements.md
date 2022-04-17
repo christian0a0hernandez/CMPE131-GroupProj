@@ -15,10 +15,10 @@
 
 ## Non-functional Requirements
 
-1. non-functional
-2. non-functional
-3. non-functional
-4. non-functional
+1. Dark Mode
+2. Interactive User Interface with simple design
+3. Will be able to work on multiple browsers
+4. Low latency/Fast Performance
 
 ## Use Cases
 
