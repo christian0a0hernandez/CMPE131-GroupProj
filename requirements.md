@@ -1,17 +1,17 @@
 ## Functional Requirements
 
-1. Login
-2. Logout
-3. Create new account
-4. Delete account
-5. Search bar
-6. My shopping cart
-7. My wish list
-8. Return policy
-9. Discount promotions
-10. requirement
-11. User ratings
-12. User profiles
+1. Login -Christian
+2. Logout -Steven
+3. Create new account -Inderpreet
+4. Delete account -Inderpreet
+5. Search bar -Inderpreet
+6. My shopping cart -Joe
+7. My wish list -Christian
+8. Return policy -Joe
+9. Discount promotions -Christian
+10. Stock Check -Steven
+11. User ratings -Joe
+12. User profiles -Steven
 
 ## Non-functional Requirements
 
