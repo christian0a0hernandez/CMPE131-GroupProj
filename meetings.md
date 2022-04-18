@@ -1,23 +1,8 @@
 ## Meetings
 
 
-### 2022-04-15 at 13:30
-<meeting template would go here>
-<only fill in template once you had the meeting>
-<see example on the last date>
-<use date format YYYY-MM-DD at HH:MM>
-
-### 2022-04-22 at 10:30
-<meeting template would go here>
-<only fill in template once you had the meeting>
-
-### 2022-04-29 at 10:30
-- Who attended the meeting
-- Team updates (15min or less)
-  <Each team member gives an update of what they did from the last meeting and what they plan to do next. If they are stuck, bring it up here to see if others can help.>
-  - <name> worked on X. Will work on Y next. 
-
-- pair-programming (optional) (25 mins)
-  <- Pair program on one part of the project. Driver will be the person responsible for that requirement.>
-
-- Summarize group progress
+### 2022-04-17 at 7:15 PM
+Steven, Inderpreet
+Meeting lasted 15 minutes
+We talked about how to do a pull requests, we deided on meeting around 7:15 PM every Sunday. We also discussed how the workflow worked for us, and some methods
+that can work well for us for future meetings.
