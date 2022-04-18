@@ -1,5 +1,8 @@
-## Meetings
+## Meetings ##
 
+### Schedule ###
+
+* Every Tuesday/Thursday at 12:30 and Sunday at 7:15
 
 ### 2022-04-17 at 7:15 PM
 Steven, Inderpreet
