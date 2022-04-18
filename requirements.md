@@ -84,9 +84,9 @@
 
 - **Precondition:** User is on a vinyl listing
 
--**Trigger:** User presses add to wish list button
+- **Trigger:** User presses add to wish list button
 
--**Primary Sequence:**
+- **Primary Sequence:**
 	1. User presses the wish list button.
 	2. Wish list button is highlighted
 
