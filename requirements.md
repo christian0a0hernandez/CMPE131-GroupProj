@@ -4,11 +4,11 @@
 2. Logout
 3. Create new account
 4. Delete account
-5. requirement
-6. requirement
-7. requirement
-8. requirement
-9. requirement
+5. Search bar
+6. My shopping cart
+7. My wish list
+8. Return policy
+9. Discount promotions
 10. requirement
 11. User ratings
 12. User profiles
