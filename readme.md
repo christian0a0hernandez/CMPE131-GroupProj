@@ -2,5 +2,5 @@
 ## Team Members ##
 * Christian Hernandez (@christian0a0hernandez)
 * Joseph Guzman (@Josephtheelder)
-* Steven Stansberry (@stevenpstansberry)
+* Steven Stansberry (@stevenpstansberry) Team Lead
 * Inderpreet Singh (@Singh1309)
