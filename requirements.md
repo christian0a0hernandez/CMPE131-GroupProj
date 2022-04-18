@@ -81,15 +81,17 @@
 	Discounted are highlighted and promoted to users
 
 4. My Wish list 
--**Precondition:** User is on a vinyl listing
+
+- **Precondition:** User is on a vinyl listing
 
 -**Trigger:** User presses add to wish list button
 
 -**Primary Sequence:**
 	1. User presses the wish list button.
-	2.Wish list button is highlighted
+	2. Wish list button is highlighted
 
--**Primary Postcondition:** item(s) are stored within the wish list.
+-**Primary Postcondition:** 
+	Item(s) are stored within the wish list.
 
 -**Alternate Sequence:** 
 	1. User navigates to the Wish list. 
@@ -101,33 +103,35 @@
 	3. User proceeds to checkout.
 
 5. Return Policy
--**Precondition:** User is on the website
 
--**Trigger:** User presses Return Policy button
+- **Precondition:** User is on the website
 
--**Primary Sequence:**
+- **Trigger:** User presses Return Policy button
+
+- **Primary Sequence:**
 	1. User presses the Return Policy button.
 	2. User sees the Return Policies
 
--**Primary Postcondition:** Return policies are shown.
+- **Primary Postcondition:** 
+	Return policies are shown.
 
--**Alternate Sequence:**
+- **Alternate Sequence:**
 	1. User presses the Return Policy button.
 	2. User sees the Return Policies.
 	3. User navigates away from Return Policy
 
 6. About
--**Precondition:** User is on the website
+- **Precondition:** User is on the website
 
--**Trigger:** User presses About button
+- **Trigger:** User presses About button
 
--**Primary Sequence:**
+- **Primary Sequence:**
 	1. User presses the About button.
 	2. User sees the About details and description about the project/website
 
--**Primary Postcondition:** Description about the website is shown.
+- **Primary Postcondition:** Description about the website is shown.
 
--**Alternate Sequence:**
+- **Alternate Sequence:**
 	1. User presses the About button.
 	2. User sees the website description and details.
 	3. User navigates away from About.
