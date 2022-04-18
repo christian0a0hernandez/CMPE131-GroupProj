@@ -90,14 +90,14 @@
 	1. User presses the wish list button.
 	2. Wish list button is highlighted
 
--**Primary Postcondition:** 
+- **Primary Postcondition:** 
 	Item(s) are stored within the wish list.
 
--**Alternate Sequence:** 
+- **Alternate Sequence:** 
 	1. User navigates to the Wish list. 
 	2. User removes certain items from the Wish list.
 
--**Alternate Sequence:**
+- **Alternate Sequence:**
 	1. User navigates to the wish list.
 	2. User adds the wish list item(s) to the shopping cart.
 	3. User proceeds to checkout.
