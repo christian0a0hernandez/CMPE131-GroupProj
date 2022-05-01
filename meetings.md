@@ -13,5 +13,5 @@ that can work well for us for future meetings.
 
 ### 2022-04-30 at 7:00 PM
 Steven, Inderpreet, Christian
-Meeting last an hour
+Meeting lasted two hours
 We worked on the gnatt chart, discussed when we will work on the project. Updated each other on our current progress. We assigned people to do the remainder of the functional requirements. Updated some of the requirements and use case to make a bit more sense.
