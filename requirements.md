@@ -1,22 +1,22 @@
 ## Functional Requirements
 
-1. Login -Christian
+1. Login -Steven
 2. Logout -Steven
-3. Create new account -Inderpreet
+3. Create new account -Steven
 4. Delete account -Inderpreet
 5. Search bar -Inderpreet
-6. My shopping cart -Joe
+6. My shopping cart -Christian
 7. My wish list -Christian
 8. Return policy -Joe
-9. Discount promotions -Christian
+9. Discount promotions -Inderpreet
 10. Stock Check -Steven
-11. User ratings -Joe
-12. User profiles -Steven
+11. User Reviews -Joe
+12. User profiles -Christian
 
 ## Non-functional Requirements
 
 1. Dark Mode
-2. Interactive User Interface with simple design
+2. Interactive User Interface with simple design -Christian
 3. Will be able to work on multiple browsers
 4. Low latency/Fast Performance
 
