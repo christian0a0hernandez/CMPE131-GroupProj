@@ -7,11 +7,18 @@
 ## About ##
 This purpose of this website program is for Vinyl enthusiasts & collectors to buy and sell vinyl records. 
 
-### Functional Requirments ###
-There are 12 functional requirments: Login, create new account, delete account, search bar, my shopping cart, my wish list, return policy, discount promotions, stock check, user reviews and user profiles. 
-
+### Functional Requirments and their contributors###
+Login, create new account, stock check          * Steven Stansberry 
+My shopping cart, my wish list, user profiles   * Christian Hernandez
+Return policy, user reviews                     * Joseph Guzman 
+Delete account, search bar, discount promotions * Inderpreet Singh
+   
 ### Non Functional Requirments ##
-There are 4 non- functional requirments: Dark mode, interactve user interface with simple design, ability to run on multiple browsers and low latency/fast performance
+There are 4 non- functional requirments: 
+* Dark mode
+* Interactve user interface with simple design
+* Ability to run on multiple browsers
+* Low latency/fast performance
 
 ## Setup & Installtion ##
 Make sure you have the latest version of Python installed.
