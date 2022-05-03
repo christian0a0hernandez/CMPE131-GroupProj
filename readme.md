@@ -8,10 +8,10 @@
 This purpose of this website program is for Vinyl enthusiasts & collectors to buy and sell vinyl records. 
 
 ### Functional Requirments and their contributors###
-Login, create new account, stock check          * Steven Stansberry 
-My shopping cart, my wish list, user profiles   * Christian Hernandez
-Return policy, user reviews                     * Joseph Guzman 
-Delete account, search bar, discount promotions * Inderpreet Singh
+* Steven Stansberry - Login, create new account, stock check          
+* Christian Hernandez - My shopping cart, my wish list, user profiles   
+* Joseph Guzman - Return policy, user reviews                     
+* Inderpreet Singh - Delete account, search bar, discount promotions 
    
 ### Non Functional Requirments ##
 There are 4 non- functional requirments: 
