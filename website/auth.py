@@ -59,4 +59,3 @@ def sign_up():
 @auth.route('/home',)
 def home():
     return render_template("home.html")
-

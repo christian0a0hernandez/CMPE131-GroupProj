@@ -21,7 +21,8 @@ There are 4 non- functional requirments:
 * Low latency/fast performance
 
 ## Setup & Installtion ##
-Make sure you have the latest version of Python installed.
+
+Make sure you have the latest version of Python, Flask, Flask-login, and SQLAlchemy installed.
 
 `git clone <repo-url>`
 
