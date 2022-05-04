@@ -34,7 +34,6 @@ def logout():
 
 @auth.route('/sign-up', methods=['GET', 'POST']) # creates a page for sign up
 def sign_up():
-
     if request.method =='POST':
         email = request.form.get('email')
         firstName = request.form.get('firstName')
@@ -51,8 +50,7 @@ def sign_up():
             new_user = User(email=email, firstName = firstName, password = password1)
             db.session.add(new_user)
             db.session.commit()
-            login_user(user, remember=True)
-            flash("Account created", category="Success")
+            flash(f"Thanks for registering, {firstName.title()}", category="Success")
             return redirect(url_for('views.home'))
 
 
@@ -61,3 +59,4 @@ def sign_up():
 @auth.route('/home',)
 def home():
     return render_template("home.html")
+
