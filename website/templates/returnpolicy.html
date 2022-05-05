@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 51px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 33px;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 33px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+<header>
+  <h2>Vinyl Hill Return Policy</h2>
+
+
+</header>
+
+<section>
+  <nav>
+    <ul>
+        <li><a href="http://127.0.0.1:5000/">                           Back to Home page</a></li>
+      <p>    </p>
+
+ <img src="https://free-images.com/lg/9139/record_vinyl_vinyl_record.jpg" alt="free-images.com"  style="width:600px;height:600px;">
+
+    </ul>
+  </nav>
+
+  <article>
+    <h1>                     Before you return anything, please read these policies</h1>
+    <p>We want you to be completely happy with your purchase from Vinly Hill. If you are not satisfied with any product, you may return it for a refund of the purchase price, store credit, or exchange for another product within returned within 14 days of the receipt of the item.</p>
+    <p>All Open Box Special, Refurbished and B-Stock items are final sale.</p>
+    <p>All returns must be in new, unused condition and have original packaging intact with all materials that come with the item.</p>
+    <p>All returns must be made within 14 days of delivery date.</p>
+    <p>when shipping your item back, please use UPS, FEDEX or US Mail with Confirmation. Vinyl Hill is not responsible for lost packages.</p>
+    <p>Unless you are returning a defective item, you will be responsible for all return shipping fees.</p>
+    <p>International customers making returns, including defective items, are responsible for all shipping costs.</p>
+    <p>Only after we receive the returned item, will we ship the replacement.</p>
+
+  </article>
+</section>
+
+<footer>
+    <p>For customer support please call us at 1-800-555 or send us an email at : vinlyhill@gmaail.com<p/>
+    <p>© 2022 Vinyl Hill. All Rights Reserved</p>
+
+</footer>
+
+
+</body>
+</html>
