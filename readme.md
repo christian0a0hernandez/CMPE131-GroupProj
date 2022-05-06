@@ -22,13 +22,19 @@ There are 4 non- functional requirments:
 
 ## Setup & Installtion ##
 
-Make sure you have the latest version of Python, Flask, Flask-login, and SQLAlchemy installed.
+Make sure you have the latest version of Python and select it as the programs interperter once the program is installed ( Version 3.8  or above)
 
 `git clone <repo-url>`
 
-`pip install -r requirements.md`
-  
+## Install the following packages using the linux command in your terminal ##
+
+`pip install flask '
+`pip install flask-login`
+`pip install flask-sqlalchemy`
+`pip install flask-wtf`
+ 
 ## Running The App ##
 `python main.py`
+
 ## Viewing The App ##
 Go to `http://127.0.0.1:5000` on your web browser
