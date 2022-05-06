@@ -1,4 +1,4 @@
-from flask import  Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from .models import User
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
@@ -23,8 +23,6 @@ def login():
         else:
             flash("Email doesn't exist", category='error')
 
-    ##data = request.form
-    ##print(data)
     return render_template("login.html")
 
 @auth.route('/logout') # creates a page for log out
@@ -64,6 +62,23 @@ def home():
 def returnpolicy():
     return render_template("returnpolicy.html")
 
+@auth.route('/delete', methods=['GET', 'POST']) # creates a page for deleting account
+def delete_user():
+    if request.method =='POST':
+        email = request.form.get('email')
+        firstName = request.form.get('firstName')
+
+        user = User.query.filter_by(email = email).first()
+        if user:
+            db.session.delete(user)
+            db.session.commit()
+            flash(f"Account deleted for, {firstName.title()}", category="Success")
+
+        else:
+            flash("No existing user found!", category='Error')
+            return redirect(url_for('views.home'))
+    return render_template("delete.html")
+
 @auth.route('/userProfile') # routes to user Profile page; still need to test
 def userProfile():
     name = "Christian Hernandez"
@@ -74,3 +89,4 @@ def userProfile():
 @auth.route('/editUserProfile') # routes to Profile editing page
 def editUserProfile():
     return render_template("edit-user-profile.html")
+
