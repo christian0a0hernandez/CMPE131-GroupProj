@@ -67,7 +67,9 @@ def returnpolicy():
 @auth.route('/userProfile') # routes to user Profile page
 def userProfile():
     name = "Christian Hernandez"
-    return render_template("user-profile.html", name=name)
+    vinylsSold = "241"
+    followers = "841"
+    return render_template("user-profile.html", name=name, vinylsSold=vinylsSold, followers=followers)
 
 @auth.route('/editUserProfile') # routes to Profile editing page
 def editUserProfile():
