@@ -28,7 +28,7 @@ Make sure you have the latest version of Python and select it as the programs in
 
 ## Install the following packages using the linux command in your terminal ##
 
-`pip install flask '
+`pip install flask`
 `pip install flask-login`
 `pip install flask-sqlalchemy`
 `pip install flask-wtf`
