@@ -56,10 +56,19 @@ def sign_up():
 
     return render_template("sign-up.html")
 
-@auth.route('/home',)
+@auth.route('/home')
 def home():
     return render_template("home.html")
 
 @auth.route('/returnpolicy') # creates a page for return policy
 def returnpolicy():
     return render_template("returnpolicy.html")
+
+@auth.route('/userProfile') # routes to user Profile page
+def userProfile():
+    name = "Christian Hernandez"
+    return render_template("user-profile.html", name=name)
+
+@auth.route('/editUserProfile') # routes to Profile editing page
+def editUserProfile():
+    return render_template("edit-user-profile.html")
