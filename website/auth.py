@@ -1,4 +1,4 @@
-from flask import  Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from .models import User
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
@@ -56,10 +56,27 @@ def sign_up():
 
     return render_template("sign-up.html")
 
-@auth.route('/home',)
+@auth.route('/home')
 def home():
     return render_template("home.html")
 
 @auth.route('/returnpolicy') # creates a page for return policy
 def returnpolicy():
     return render_template("returnpolicy.html")
+
+@auth.route('/delete', methods=['GET', 'POST']) # creates a page for deleting account
+def delete_user():
+    if request.method =='POST':
+        email = request.form.get('email')
+        firstName = request.form.get('firstName')
+
+        user = User.query.filter_by(email = email).first()
+        if user:
+            db.session.delete(user)
+            db.session.commit()
+            flash(f"Account deleted for, {firstName.title()}", category="Success")
+
+        else:
+            flash("No existing user found!", category='Error')
+            return redirect(url_for('views.home'))
+    return render_template("delete.html")
