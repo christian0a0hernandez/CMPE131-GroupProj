@@ -64,7 +64,7 @@ def home():
 def returnpolicy():
     return render_template("returnpolicy.html")
 
-@auth.route('/userProfile') # routes to user Profile page
+@auth.route('/userProfile') # routes to user Profile page; still need to test
 def userProfile():
     name = "Christian Hernandez"
     vinylsSold = "241"
