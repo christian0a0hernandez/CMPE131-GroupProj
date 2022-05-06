@@ -23,12 +23,16 @@
         </button>
     <div class = "collapse navbar-collapse" id="navbar">
         <div class ="navbar-nav">
+            {% if user.is_authenticated %}
             <a class ="nav-item nv-link" id="home" href="/home">Home    |</a>
+            <a class ="nav-item nv-link" id="logout" href="/logout">|        Logout    |</a>
+
+            {% else %}
             <a class ="nav-item nv-link" id="signup" href="/sign-up">|        Sign Up    |</a>
             <a class ="nav-item nv-link" id="login" href="/login">|        Login    |</a>
-            <a class ="nav-item nv-link" id="logout" href="/logout">|        Logout    |</a>
-            <a class ="nav-item nv-link" id="returnpolicy" href="/returnpolicy">|        Return Policy    |</a>
+            {% endif %}
             <a class ="nav-item nv-link" id="delete" href="/delete">|        Delete Account</a>
+            <a class ="nav-item nv-link" id="returnpolicy" href="/returnpolicy">|        Return Policy    |</a>
         </div>
     </div>
     </nav>
