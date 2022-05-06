@@ -80,3 +80,15 @@ def delete_user():
             flash("No existing user found!", category='Error')
             return redirect(url_for('views.home'))
     return render_template("delete.html")
+
+@auth.route('/userProfile') # routes to user Profile page; still need to test
+def userProfile():
+    name = "Christian Hernandez"
+    vinylsSold = "241"
+    followers = "841"
+    return render_template("user-profile.html", name=name, vinylsSold=vinylsSold, followers=followers)
+
+@auth.route('/editUserProfile') # routes to Profile editing page
+def editUserProfile():
+    return render_template("edit-user-profile.html")
+
