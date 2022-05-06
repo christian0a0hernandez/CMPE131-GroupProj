@@ -23,8 +23,6 @@ def login():
         else:
             flash("Email doesn't exist", category='error')
 
-    ##data = request.form
-    ##print(data)
     return render_template("login.html")
 
 @auth.route('/logout') # creates a page for log out
