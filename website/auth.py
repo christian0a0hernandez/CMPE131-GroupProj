@@ -24,7 +24,7 @@ def login():
         else:
             flash("Email doesn't exist", category='error')
 
-    return render_template("login.html")
+    return render_template("login.html",user = current_user)
 
 @auth.route('/logout') # creates a page for log out
 def logout():
@@ -53,11 +53,11 @@ def sign_up():
             return redirect(url_for('views.home'))
 
 
-    return render_template("sign-up.html")
+    return render_template("sign-up.html",user = current_user)
 
 @auth.route('/home')
 def home():
-    return render_template("home.html")
+    return render_template("home.html",user = current_user)
 
 @auth.route('/returnpolicy') # creates a page for return policy
 def returnpolicy():
@@ -78,7 +78,7 @@ def delete_user():
         else:
             flash("No existing user found!", category='Error')
             return redirect(url_for('views.home'))
-    return render_template("delete.html")
+    return render_template("delete.html",user = current_user)
 
 @auth.route('/userProfile') # routes to user Profile page; still need to test
 def userProfile():
