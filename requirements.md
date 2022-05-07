@@ -5,7 +5,7 @@
 3. Create new account -Steven
 4. Delete account -Inderpreet
 5. Search bar -Inderpreet
-6. My shopping cart -Christian
+6. Navbar -Christian
 7. My wish list -Christian
 8. Return policy -Joe
 9. Discount promotions -Inderpreet
