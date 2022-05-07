@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
-from .models import User
+from .models import User, Brand, Category
 from . import db
+from .forms import Addproducts
 from flask_login import login_user, login_required, logout_user, current_user
 
 
@@ -23,12 +24,12 @@ def login():
         else:
             flash("Email doesn't exist", category='error')
 
-    return render_template("login.html", user = current_user)
+    return render_template("login.html",user = current_user)
 
 @auth.route('/logout') # creates a page for log out
 def logout():
     logout_user()
-    return redirect(url_for('a.login'))
+    return redirect(url_for('a.home'))
 
 @auth.route('/sign-up', methods=['GET', 'POST']) # creates a page for sign up
 def sign_up():
@@ -56,7 +57,7 @@ def sign_up():
 
 @auth.route('/home')
 def home():
-    return render_template("home.html", user = current_user)
+    return render_template("home.html",user = current_user)
 
 @auth.route('/returnpolicy') # creates a page for return policy
 def returnpolicy():
@@ -90,3 +91,35 @@ def userProfile():
 def editUserProfile():
     return render_template("edit-user-profile.html")
 
+
+@auth.route('/addbrand',methods = ['GET', 'POST'])
+def addbrand():
+    if request.method == "POST":
+        getbrand = request.form.get('brand')
+        brand = Brand(name=getbrand)
+        db.session.add(brand)
+        flash(f'Brand "{getbrand}" added!','success')
+        db.session.commit()
+        return redirect(url_for('a.addbrand'))
+
+    return render_template('addbrand.html',user = current_user,brands ='brands')
+
+@auth.route('/addcategory',methods = ['GET', 'POST'])
+def addcategory():
+    if request.method == "POST":
+        getbrand = request.form.get('category')
+        category = Category(name=getbrand)
+        db.session.add(category)
+        flash(f'Category "{getbrand}" added!','success')
+        db.session.commit()
+        return redirect(url_for('a.addbrand'))
+
+    return render_template('addbrand.html',user = current_user)
+
+@auth.route('/addproduct', methods =['POST','GET'])
+def addproduct():
+    brands = Brand.query.all()
+    categories =Category.query.all()
+    form = Addproducts(request.form)
+    return render_template('addproduct.html', title ="Add Product", form = form,user = current_user,
+                           brands = brands,categories = categories)
