@@ -22,7 +22,7 @@ def create_app(): #initalizing flask
 
     create_database(app)
 
-    from .models import User # database
+    from .models import User
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
