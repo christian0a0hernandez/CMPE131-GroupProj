@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac00a392-2eb4-4a79-8019-414940ae85f6" name="Changes" comment="added navbar buttons">
+    <list default="true" id="ac00a392-2eb4-4a79-8019-414940ae85f6" name="Changes" comment="added categories and brand">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/addproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/addproduct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/website/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651879315795</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added categories and brand">
+      <created>1651880093328</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651880093328</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +125,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed form fields" />
     <MESSAGE value="added navbar buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="added navbar buttons" />
+    <MESSAGE value="added categories and brand" />
+    <option name="LAST_COMMIT_MESSAGE" value="added categories and brand" />
   </component>
 </project>
