@@ -27,7 +27,7 @@ There are 4 non- functional requirments:
 `pip install flask-sqlalchemy`
 `pip install flask-wtf`
 
-##  Installtion & Setup & ##
+##  Installtion & Setup  ##
 Install the program into your system using the following linux command: 
 `git clone <repo-url>`
 
