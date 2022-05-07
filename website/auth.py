@@ -85,11 +85,11 @@ def userProfile():
     name = "Christian Hernandez"
     vinylsSold = "241"
     followers = "841"
-    return render_template("user-profile.html", name=name, vinylsSold=vinylsSold, followers=followers)
+    return render_template("user-profile.html", name=name, vinylsSold=vinylsSold, followers=followers,user = current_user)
 
 @auth.route('/editUserProfile') # routes to Profile editing page
 def editUserProfile():
-    return render_template("edit-user-profile.html")
+    return render_template("edit-user-profile.html",user = current_user)
 
 
 @auth.route('/addbrand',methods = ['GET', 'POST'])
