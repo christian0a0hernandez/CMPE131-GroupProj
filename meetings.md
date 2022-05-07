@@ -20,3 +20,8 @@ We worked on the gnatt chart, discussed when we will work on the project. Update
 Steven, Joe
 Meeting lasted 30 minutes
 We updated eachother on our progress as well as catching everyone up on what we discussed on themeeting on 4-30, which not everyone could attend due to time conflicts. Discussed the gnatt chart and what we need to do the readme file.
+
+### 2022-05-04 at 1:39 PM
+Steven, Joe
+Meeting lasted 75 minutes
+We helped each other with some errors that were due to the virtual enviroenment of the IDE being set up. We worked on some requirements together and gave eachother some pointers and other help as neeeded. We looked at each others code in person and gave some feedback on it, which was helpful to do in person.

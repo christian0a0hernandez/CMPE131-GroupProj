@@ -20,15 +20,21 @@ There are 4 non- functional requirments:
 * Ability to run on multiple browsers
 * Low latency/fast performance
 
-## Setup & Installtion ##
+## Install the following packages using the linux command in your terminal ##
 
-Make sure you have the latest version of Python, Flask, Flask-login, and SQLAlchemy installed.
+`pip install flask`
+`pip install flask-login`
+`pip install flask-sqlalchemy`
+`pip install flask-wtf`
 
+##  Installtion & Setup  ##
+Install the program into your system using the following linux command: 
 `git clone <repo-url>`
 
-`pip install -r requirements.md`
-  
+Make sure you have the latest version of Python and select it as the programs interperter once the program is installed ( Version 3.8  or above)
+
 ## Running The App ##
 `python main.py`
+
 ## Viewing The App ##
 Go to `http://127.0.0.1:5000` on your web browser
