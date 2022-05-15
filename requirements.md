@@ -61,14 +61,9 @@
 - **Primary Postconditions:**  User is presented with items and their respective prices in their cart.
  
 - **Alterante Sequence:** 
- 1. User is not logged in or does not have an account
- 2. User is redirected to form to either log in or sign up
- 3. If the user logs into an existing account,redirect to shopping list, else redirect to inventory
-
-
-  
-  
-  
+   1. User is not logged in or does not have an account
+   2. User is redirected to form to either log in or sign up
+   3. If the user logs into an existing account,redirect to shopping list, else redirect to inventory
   
 3. Promotions 
 - **Pre-condition:** Item exists in store
