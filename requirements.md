@@ -70,7 +70,7 @@
   
   
   
- 3. Promotions 
+3. Promotions 
 - **Pre-condition:** Item exists in store
 
 
