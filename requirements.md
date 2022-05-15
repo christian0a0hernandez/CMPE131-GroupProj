@@ -78,7 +78,7 @@
 	2. Items that are discounted will recieve special marking on their icon, and be displayed forefront on the webpage.
 	
 
--**Primary Postcondition:** 
+- **Primary Postcondition:** 
 	Discounted are highlighted within the inventory section and promoted to users
 
 4. My Wish list 
