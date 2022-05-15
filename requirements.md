@@ -30,7 +30,8 @@
 - **Primary Sequence:**
   
   1. User inputs query
-  2. User performs search function
+  2. User is able to narrow down search with year, artist, genre.
+  3. User performs search function
 
 - **Primary Postconditions:** User is presented with relevant search results.
 
@@ -47,22 +48,21 @@
 
 
 2. My Shopping List
-- **Pre-condition:** User is on a vinyl listing
+- **Pre-condition:** The user must be logged in.
 
-
-- **Trigger:** User pressed "Add to shopping cart" ubutton
-
+- **Trigger:** User presses "My Shopping Cart" button
 
 - **Primary Sequence:**
-   1. User specifies desired quanity of said item
-   2. Specified quanity of items are added to the shopping cart
+   1. Website retrieves list of items added to list by user.
+   2. Website displays list of items sorted in lexicographic order.
+   3. Website displays prices of all items next to each item's entry
+   4. Website will sum up total price and quanity of all items and display it to the user
    
- -**Primary Postconditions:**  Items are stored within the shopping cart
-  
-  
- -**Alternate Sequence:** 
-  1. User navigates to shopping cart list
-  2. User removes certain items from shopping cart
+ -**Primary Postconditions:**  User is presented with items and their respective prices in their cart.
+ 
+ -**Alterante Sequence:** 
+ 1. User is not logged in or does not have an account
+ 2. User is redirected to form to either log in or sign up
   
   
 3. Promotions 
@@ -79,7 +79,7 @@
 	
 
 -**Primary Postcondition:** 
-	Discounted are highlighted and promoted to users
+	Discounted are highlighted within the inventory section and promoted to users
 
 4. My Wish list 
 
