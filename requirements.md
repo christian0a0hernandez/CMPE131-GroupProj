@@ -57,6 +57,7 @@
    2. Website displays list of items sorted in lexicographic order.
    3. Website displays prices of all items next to each item's entry
    4. Website will sum up total price and quanity of all items and display it to the user
+   5. A checkout button is presented a the bottom of the list, which will direct user to a checkout page
    
 - **Primary Postconditions:**  User is presented with items and their respective prices in their cart.
  
@@ -67,7 +68,6 @@
   
 3. Promotions 
 - **Pre-condition:** Item exists in store
-
 
 - **Trigger:** All item's are peridoically sent through a rudimentary algothrim to determine if they will be selected for a set discount, or set by the poster.
 
@@ -83,25 +83,27 @@
 
 4. My Wish list 
 
-- **Precondition:** User is on a vinyl listing
+- **Precondition:** User is logged in.
 
-- **Trigger:** User presses add to wish list button
+- **Trigger:** User presses my wish list button.
+
 
 - **Primary Sequence:**
-	1. User presses the wish list button.
-	2. Wish list button is highlighted
+	1. User is redirected to a page where item's they have choosen to add to wish list are stored.
+	2. Item's are displayed similar to the shopping cart, where they are displayed lexicographically with their price adjacent.
+	3. Next to each item is a button labeled "Add to Cart" which will add item to their shopping cart.
 
 - **Primary Postcondition:** 
-	Item(s) are stored within the wish list.
+	User is presented with a list of items on their shopping list.
 
 - **Alternate Sequence:** 
 	1. User navigates to the Wish list. 
 	2. User removes certain items from the Wish list.
 
 - **Alternate Sequence:**
-	1. User navigates to the wish list.
-	2. User adds the wish list item(s) to the shopping cart.
-	3. User proceeds to checkout.
+	1. User is not logged in.
+   	2. User is redirected to form to either log in or sign up
+   	3. If the user logs into an existing account,redirect to shopping list, else redirect to inventory
 
 5. Return Policy
 
@@ -116,10 +118,6 @@
 - **Primary Postcondition:** 
 	Return policies are shown.
 
-- **Alternate Sequence:**
-	1. User presses the Return Policy button.
-	2. User sees the Return Policies.
-	3. User navigates away from Return Policy
 
 6. About
 - **Precondition:** User is on the website
