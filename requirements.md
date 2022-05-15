@@ -58,9 +58,9 @@
    3. Website displays prices of all items next to each item's entry
    4. Website will sum up total price and quanity of all items and display it to the user
    
--**Primary Postconditions:**  User is presented with items and their respective prices in their cart.
+- **Primary Postconditions:**  User is presented with items and their respective prices in their cart.
  
- -**Alterante Sequence:** 
+- **Alterante Sequence:** 
  1. User is not logged in or does not have an account
  2. User is redirected to form to either log in or sign up
   
