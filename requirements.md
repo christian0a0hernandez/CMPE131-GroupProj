@@ -56,7 +56,7 @@
    1. Website retrieves list of items added to list by user.
    2. Website displays list of items sorted in lexicographic order.
    3. Website displays prices of all items next to each item's entry
-   4. Website will sum up total price and quanity of all items and display it to the user
+   4. Website will sum up total price and quantity of all items and display it to the user
    5. A checkout button is presented a the bottom of the list, which will direct user to a checkout page
    
 - **Primary Postconditions:**  User is presented with items and their respective prices in their cart.
@@ -69,11 +69,11 @@
 3. Promotions 
 - **Pre-condition:** Item exists in store
 
-- **Trigger:** All item's are peridoically sent through a rudimentary algothrim to determine if they will be selected for a set discount, or set by the poster.
-
+- **Trigger:** All item's are periodically sent through a rudimentary algothrim to determine if they will be selected for a set discount, or set by the poster.
 
 - **Primary Sequence:** 
-	1. Items that are selected by the algothrim will recieve a discount and length of discount determined by the algothrim. Item's
+
+	1. Items that are selected by the algorithm will receive a discount and length of discount determined by the algothrim. Item's
 	selected by poster will have manually set discount.
 	2. Items that are discounted will recieve special marking on their icon, and be displayed forefront on the webpage.
 	
