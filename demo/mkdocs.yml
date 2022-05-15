@@ -1,0 +1,5 @@
+site_name: Vinyl Hill Documentation
+nav:
+  - Introduction: "index.md"
+  - About: "pages/about.md"
+  - Tutorial: "pages/tutorial"

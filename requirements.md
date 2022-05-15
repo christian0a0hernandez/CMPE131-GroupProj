@@ -5,7 +5,7 @@
 3. Create new account -Steven
 4. Delete account -Inderpreet
 5. Search bar -Inderpreet
-6. My shopping cart -Christian
+6. Navbar -Christian
 7. My wish list -Christian
 8. Return policy -Joe
 9. Discount promotions -Inderpreet
@@ -69,11 +69,12 @@
 - **Pre-condition:** Item exists in store
 
 
--**Trigger:** All item's are peridoically sent through a rudimentary algothrim to determine if they will be selected for a set discount
+-**Trigger:** All item's are peridoically sent through a rudimentary algothrim to determine if they will be selected for a set discount, or set by the poster.
 
 
 -**Primary Sequence:** 
-	1. Items that are selected by the algothrim will recieve a discount and length of discount determined by the algothrim
+	1. Items that are selected by the algothrim will recieve a discount and length of discount determined by the algothrim. Item's
+	selected by poster will have manually set discount.
 	2. Items that are discounted will recieve special marking on their icon, and be displayed forefront on the webpage.
 	
 
