@@ -66,6 +66,8 @@
  3. If the user logs into an existing account,redirect to shopping list, else redirect to inventory
   
   
+  
+  
  3. Promotions 
 - **Pre-condition:** Item exists in store
 
