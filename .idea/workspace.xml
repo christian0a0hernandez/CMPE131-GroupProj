@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17bdadeb-7b2b-41a7-983f-1cef4e425bd6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/VinylHill-Main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VinylHill.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/addbrand.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/addbrand.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website/templates/addproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/addproduct.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +25,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -74,6 +68,21 @@
       <option name="presentableId" value="Default" />
       <updated>1652652403275</updated>
     </task>
+    <task id="LOCAL-00001" summary="edited html of add product page, added feature&#10;of adding photos to products">
+      <created>1652654636158</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652654636158</updated>
+    </task>
+    <task id="LOCAL-00002" summary="edited html of add product page, added feature&#10;of adding photos to products">
+      <created>1652654684563</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1652654684563</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,5 +95,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="edited html of add product page, added feature&#10;of adding photos to products" />
+    <option name="LAST_COMMIT_MESSAGE" value="edited html of add product page, added feature&#10;of adding photos to products" />
   </component>
 </project>
