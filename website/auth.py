@@ -255,3 +255,8 @@ def deleteproduct(id):
         return redirect(url_for('views.home'))
     flash(f'Can not delete the product', category = 'success')
     return redirect(url_for('views.home'))
+
+@auth.route('/inventory')
+def inventory():
+    products = Addproduct.query.filter(Addproduct.stock > 0)
+    return render_template('inventory.html', user = current_user, products = products)
