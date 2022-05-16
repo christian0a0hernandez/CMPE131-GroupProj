@@ -6,12 +6,13 @@
 4. Delete account -Inderpreet
 5. Search bar -Inderpreet
 6. Navbar -Christian
-7. My wish list -Christian
+7. My Shopping Cart -Christian
 8. Return policy -Joe
 9. Discount promotions -Inderpreet
 10. Stock Check -Steven
 11. User Reviews -Joe
 12. User profiles -Christian
+13. Wish List
 
 ## Non-functional Requirements
 

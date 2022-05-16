@@ -143,7 +143,6 @@ def addcategory():
 
 
 
-
 @auth.route('/addproduct', methods=['POST', 'GET'])
 def addproduct():
     brands = Brand.query.all()
@@ -281,3 +280,14 @@ def inventory():
     brands = Brands.query.all()
 
     return render_template('inventory.html', user = current_user, products = products, brands = brands)
+=======
+    return render_template('addproduct.html', title ="Add Product", form = form,user = current_user,
+                           brands = brands,categories = categories)
+
+@auth.route('/checkout') # creates a page for checkouts
+def checkout():
+    return render_template("checkout.html",user = current_user)
+
+@auth.route('/discounts') # creates a page for discount offers
+def discounts():
+    return render_template("discounts.html",user = current_user)

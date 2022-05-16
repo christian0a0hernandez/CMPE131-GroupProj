@@ -28,22 +28,29 @@
             <a class ="nav-item nv-link" id="addproduct" href="/addproduct">|        Add a Product    |</a>
             <a class ="nav-item nv-link" id="addbrand" href="/addbrand">|        Add a genre    |</a>
             <a class ="nav-item nv-link" id="addcategory" href="/addcategory">|        Add an artist    |</a>
+
             <a class ="nav-item nv-link" id="logout" href="/logout">|        Logout    |</a>
             <a class ="nav-item nv-link" id="userProfile" href="/userProfile">|       View Profile    |</a>
             <a class ="nav-item nv-link" id="editUserProfile" href="/editUserProfile">|        Edit Profile    |</a>
+            <a class ="nav-item nv-link" id="checkout" href="/checkout">|        Checkout    |</a>
             {% else %}
             <a class ="nav-item nv-link" id="login" href="/login">|        Login    |</a>
             <a class ="nav-item nv-link" id="signup" href="/sign-up">|        Sign Up    |</a>
             {% endif %}
             <a class ="nav-item nv-link" id="returnpolicy" href="/returnpolicy">|        Return Policy    |</a>
             <a class ="nav-item nv-link" id="delete" href="/delete">|        Delete Account</a>
+
         </div>
     </div>
         <div class = "search-box">
         <input class = "search-txt" type ="text" name ="" placeholder="Enter Search">
         <a class ="search-btn" hred="#">
         </a>
+        <img class="featurette-image img-fluid mx-auto" src="https://cdn.discordapp.com/attachments/708927751591297064/975678816586448936/20220516_0139100.5850418015452257.png" alt="Logo" width="50" height="50" align="right">
+
         </div>
+
+
     </nav>
 
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
