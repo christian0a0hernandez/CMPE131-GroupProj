@@ -19,7 +19,6 @@
                 <option value ="{{brand.id}}"> {{brand.name}}</option>
                     {% endfor %}
                 </select>
-
             <label for ="category">Select an artist</label>
             <select name = "category" id="category" class="form-control" required>
                     <option value=""> Select a category</option>
@@ -27,10 +26,8 @@
                 <option value ="category.id"> {{category.name}}</option>
                     {% endfor %}
                 </select>
-
             {{render_field(form.stock, class ="form-control" , placeholders="Add a product stock")}}
             {{render_field(form.description, class ="form-control" , placeholders="Add a product description", rows = "10")}}
-
             <div class="container">
                 <div class = "row">
                     <div class = "col-md-4"> {{render_field(form.image_1, class = "form-control")}}</div>
@@ -43,5 +40,7 @@
     </div>
     <div class = "col-md-2"></div>
 </div>
+
+
 
 {% endblock dablock %}

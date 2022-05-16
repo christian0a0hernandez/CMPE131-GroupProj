@@ -1,24 +1,23 @@
 {% extends "base.html" %}
-
 {% block dablock %}
 
 <div class = "container">
     <div class ="row">
         {% if brands %}
-        <h1> Add a brand </h1>
+        <h1> Add a genre! </h1>
         <div class ="col-md-3"></div>
         <div class ="col-md-6"></div>
         {% endif %}
         {% if brands %}
             <form action ="" method ="POST">
                 <input type ="text" name ="brand" class = "form-control">
-                <input type ="submit" value ="Add brand" class ="btn btn-info mt-2">
+                <input type ="submit" value ="Add genre" class ="btn btn-info mt-2">
             </form>
             {% else %}
-        <h1>Add a category </h1>
+        <h1>Add an Artist! </h1>
             <form action ="" method ="POST">
                 <input type ="text" name ="category" class = "form-control">
-                <input type ="submit" value ="Add category" class ="btn btn-info mt-2">
+                <input type ="submit" value ="Add artist" class ="btn btn-info mt-2">
             </form>
             {% endif %}
     </div>

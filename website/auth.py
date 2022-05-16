@@ -111,7 +111,6 @@ def addbrand():
 
     return render_template('addbrand.html', user=current_user, brands='brands')
 
-
 @auth.route('/addcategory', methods=['GET', 'POST'])
 def addcategory():
     if request.method == "POST":
@@ -123,6 +122,26 @@ def addcategory():
         return redirect(url_for('a.addbrand'))
 
     return render_template('addbrand.html', user=current_user)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @auth.route('/addproduct', methods=['POST', 'GET'])
@@ -259,4 +278,6 @@ def deleteproduct(id):
 @auth.route('/inventory')
 def inventory():
     products = Addproduct.query.filter(Addproduct.stock > 0)
-    return render_template('inventory.html', user = current_user, products = products)
+    brands = Brands.query.all()
+
+    return render_template('inventory.html', user = current_user, products = products, brands = brands)
