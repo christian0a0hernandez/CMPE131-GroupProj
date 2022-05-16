@@ -1,4 +1,4 @@
-from wtforms import StringField, Form, SubmitField, IntegerField, TextAreaField, validators, BooleanField
+from wtforms import StringField, Form, DecimalField, SubmitField, IntegerField, TextAreaField, validators, BooleanField
 from flask_wtf.file import FileAllowed, FileField, FileRequired
 
 
@@ -8,7 +8,7 @@ from flask_wtf.file import FileAllowed, FileField, FileRequired
 
 class Addproducts(Form):
     name = StringField('Name', [validators.DataRequired()])
-    price = IntegerField('Price', [validators.DataRequired()])
+    price = DecimalField('Price', [validators.DataRequired()])
     discount = IntegerField('Discount', default=0)
     stock = IntegerField('Stock', [validators.DataRequired()])
     description = TextAreaField("Description", [validators.DataRequired()])
