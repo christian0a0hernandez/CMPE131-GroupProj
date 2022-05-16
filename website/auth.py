@@ -148,7 +148,39 @@ def addproduct():
     return render_template('addproduct.html', title ="Add Product", form = form,user = current_user,
                            brands = brands,categories = categories)
 
-@auth.route('/adminpage')
+@auth.route('/adminpage') # used to debug inventory system
 def adminpage():
     products = Addproduct.query.all()
     return render_template("adminpage.html", title='Admin Page', products = products, user = current_user)
+
+@auth.route('/genres')
+def brands():
+    genre = Brand.query.order_by(Brand.id.desc()).all()
+    return render_template('genre.html', title = "Genre page", genre = genre, user = current_user)
+
+@auth.route('/artists')
+def artists():
+    artists = Category.query.order_by(Category.id.desc()).all()
+    return render_template('genre.html', title = "artists page", artists = artists, user = current_user)
+
+@auth.route('/updategenres/<int:id>', methods =['GET','POST'])
+def updategenres(id):
+    updategenres = Brand.query.get(id)
+    brand = request.form.get('brand')
+    if request.method =="POST":
+        updategenres.name = brand
+        flash(f'Genre updated!',category = 'success')
+        db.session.commit()
+        return redirect(url_for('views.home')) #reroutes to home
+    return render_template('updategenres.html',title ="Update Genre Page", updategenres = updategenres, user = current_user)
+
+@auth.route('/updateartists/<int:id>', methods =['GET','POST'])
+def updateartists(id):
+    updateartists = Category.query.get(id)
+    category = request.form.get('category')
+    if request.method =="POST":
+        updateartists.name = category
+        flash(f'Artist updated!',category = 'success')
+        db.session.commit()
+        return redirect(url_for('views.home')) #reroutes to home
+    return render_template('updategenres.html',title ="Update Category Page", updateartists = updateartists, user = current_user)

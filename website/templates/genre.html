@@ -1,0 +1,38 @@
+{% extends "base.html"%}
+
+{% block dablock %}
+
+
+<div class="container">
+<table class ="table table-sm">
+    <table class="table table-sm table-bordered">
+    <thead>
+        <th>Index</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tb>
+        {% if genre %}
+        {% for brand in genre %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{brand.name}}</td>
+            <td> <a href="{{url_for('a.updategenres', id=brand.id)}}" class = "btn btn -sm btn-outline-info">Edit</a> </td>
+            <td><a href= "" >Delete</a></td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        {% for category in artists %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{category.name}}</td>
+            <td> <a href="{{url_for('a.updateartists', id=category.id)}}" class = "btn btn -sm btn-outline-info">Edit</a> </td>
+            <td><a href= "" >Delete</a></td>
+        {% endfor %}
+        {% endif %}
+
+    </tb>
+</table>
+</div>
+{% endblock dablock %}

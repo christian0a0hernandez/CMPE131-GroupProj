@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17bdadeb-7b2b-41a7-983f-1cef4e425bd6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/website/templates/adminpage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/genre.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/updategenres.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/adminpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/adminpage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652662637902</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added an admin page to view inventory">
+      <created>1652665983440</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652665983440</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +145,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edited html of add product page, added feature&#10;of adding photos to products" />
     <MESSAGE value="refined inventory system to add to database" />
-    <option name="LAST_COMMIT_MESSAGE" value="refined inventory system to add to database" />
+    <MESSAGE value="added an admin page to view inventory" />
+    <option name="LAST_COMMIT_MESSAGE" value="added an admin page to view inventory" />
   </component>
 </project>
