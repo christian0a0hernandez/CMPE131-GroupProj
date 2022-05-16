@@ -14,14 +14,14 @@
 
             <label for ="brand">Select a genre</label>
             <select name = "brand" id="brand" class="form-control" required>
-                    <option value=""> Select a brand</option>
+                    <option value=""> Select a genre</option>
                     {% for brand in brands %}
                 <option value ="{{brand.id}}"> {{brand.name}}</option>
                     {% endfor %}
                 </select>
             <label for ="category">Select an artist</label>
             <select name = "category" id="category" class="form-control" required>
-                    <option value=""> Select a category</option>
+                    <option value=""> Select an artist</option>
                     {% for category in categories %}
                 <option value ="category.id"> {{category.name}}</option>
                     {% endfor %}
