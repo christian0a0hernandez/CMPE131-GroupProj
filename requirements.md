@@ -6,19 +6,20 @@
 4. Delete account -Inderpreet
 5. Search bar -Inderpreet
 6. Navbar -Christian
-7. My wish list -Christian
+7. My Shopping Cart -Christian
 8. Return policy -Joe
 9. Discount promotions -Inderpreet
 10. Stock Check -Steven
 11. User Reviews -Joe
 12. User profiles -Christian
+13. Wish List - Steven
 
 ## Non-functional Requirements
 
 1. Dark Mode
 2. Interactive User Interface with simple design -Christian
 3. Will be able to work on multiple browsers
-4. Low latency/Fast Performance
+4. Low latency/Fast Performance ideally response time of ~ 1ms
 
 ## Use Cases
 
@@ -30,7 +31,8 @@
 - **Primary Sequence:**
   
   1. User inputs query
-  2. User performs search function
+  2. User is able to narrow down search with year, artist, genre etc...
+  3. User performs search function
 
 - **Primary Postconditions:** User is presented with relevant search results.
 
@@ -47,61 +49,62 @@
 
 
 2. My Shopping List
-- **Pre-condition:** User is on a vinyl listing
+- **Pre-condition:** The user must be logged in.
 
-
-- **Trigger:** User pressed "Add to shopping cart" ubutton
-
+- **Trigger:** User presses "My Shopping Cart" button
 
 - **Primary Sequence:**
-   1. User specifies desired quanity of said item
-   2. Specified quanity of items are added to the shopping cart
+   1. Website retrieves list of items added to list by user.
+   2. Website displays list of items sorted in lexicographic order.
+   3. Website displays prices of all items next to each item's entry
+   4. Website will sum up total price and quantity of all items and display it to the user
+   5. A checkout button is presented a the bottom of the list, which will direct user to a checkout page
    
- -**Primary Postconditions:**  Items are stored within the shopping cart
-  
-  
- -**Alternate Sequence:** 
-  1. User navigates to shopping cart list
-  2. User removes certain items from shopping cart
-  
+- **Primary Postconditions:**  User is presented with items and their respective prices in their cart.
+ 
+- **Alterante Sequence:** 
+   1. User is not logged in or does not have an account
+   2. User is redirected to form to either log in or sign up
+   3. If the user logs into an existing account,redirect to shopping list, else redirect to inventory
   
 3. Promotions 
 - **Pre-condition:** Item exists in store
 
+- **Trigger:** All item's are periodically sent through a rudimentary algothrim to determine if they will be selected for a set discount, or set by the poster.
 
--**Trigger:** All item's are peridoically sent through a rudimentary algothrim to determine if they will be selected for a set discount, or set by the poster.
+- **Primary Sequence:** 
 
-
--**Primary Sequence:** 
-	1. Items that are selected by the algothrim will recieve a discount and length of discount determined by the algothrim. Item's
+	1. Items that are selected by the algorithm will receive a discount and length of discount determined by the algothrim. Item's
 	selected by poster will have manually set discount.
 	2. Items that are discounted will recieve special marking on their icon, and be displayed forefront on the webpage.
 	
 
--**Primary Postcondition:** 
-	Discounted are highlighted and promoted to users
+- **Primary Postcondition:** 
+	Discounted are highlighted within the inventory section and promoted to users
 
 4. My Wish list 
 
-- **Precondition:** User is on a vinyl listing
+- **Precondition:** User is logged in.
 
-- **Trigger:** User presses add to wish list button
+- **Trigger:** User presses my wish list button.
+
 
 - **Primary Sequence:**
-	1. User presses the wish list button.
-	2. Wish list button is highlighted
+	1. User is redirected to a page where item's they have choosen to add to wish list are stored.
+	2. Item's are displayed similar to the shopping cart, where they are displayed lexicographically with their price adjacent.
+	3. Next to each item is a button labeled "Add to Cart" which will add item to their shopping cart.
 
 - **Primary Postcondition:** 
-	Item(s) are stored within the wish list.
+	User is presented with a list of items on their shopping list.
 
 - **Alternate Sequence:** 
 	1. User navigates to the Wish list. 
 	2. User removes certain items from the Wish list.
 
 - **Alternate Sequence:**
-	1. User navigates to the wish list.
-	2. User adds the wish list item(s) to the shopping cart.
-	3. User proceeds to checkout.
+	1. User is not logged in.
+   	2. User is redirected to form to either log in or sign up
+   	3. If the user logs into an existing account,redirect to shopping list, else redirect to inventory
 
 5. Return Policy
 
@@ -116,10 +119,6 @@
 - **Primary Postcondition:** 
 	Return policies are shown.
 
-- **Alternate Sequence:**
-	1. User presses the Return Policy button.
-	2. User sees the Return Policies.
-	3. User navigates away from Return Policy
 
 6. About
 - **Precondition:** User is on the website

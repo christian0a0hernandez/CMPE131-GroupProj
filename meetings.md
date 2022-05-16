@@ -25,3 +25,8 @@ We updated eachother on our progress as well as catching everyone up on what we 
 Steven, Joe
 Meeting lasted 75 minutes
 We helped each other with some errors that were due to the virtual enviroenment of the IDE being set up. We worked on some requirements together and gave eachother some pointers and other help as neeeded. We looked at each others code in person and gave some feedback on it, which was helpful to do in person.
+
+### 2022-05-15 at 9:30 PM
+Steven, Inderpreet, Joe
+Meeting last 45 minutes
+We updated each other on how our work is going. We decided to reorganize who is going to work on what. We demonstrated some code togehter and planned out how we're going to integrate the inventory system with the UI to make it look nice. We also vowed to spend the remainder of time until the due date on open notice for us to help each other out.

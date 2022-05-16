@@ -26,6 +26,9 @@ There are 4 non- functional requirments:
 `pip install flask-login`
 `pip install flask-sqlalchemy`
 `pip install flask-wtf`
+`pip install flask_uploads`
+`pip install -U Werkzeug==0.16.0`
+`pip install Flask-Reuploaded`
 
 ##  Installtion & Setup  ##
 Install the program into your system using the following linux command: 
