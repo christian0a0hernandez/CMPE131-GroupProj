@@ -1,10 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
+{% extends "base.html" %}
+{% block title  %}Checkout{% endblock %}
+
+{% block dablock %}
+
+<h1 style="text-align:center;">Discounts and Promotions</h1>
+
 <body>
-$END$
-</body>
-</html>
+    <div class="container">
+
+      <h3>Choose the coupon that suits your deal best!</h3>
+      <p>Go through the names, read the description, and then copy the coupon code and put it in the checkout!</p>
+
+      <div class="row">
+        <div class="col-4"><strong>Deal</strong></div>
+        <div class="col-4"><strong>Description</strong></div>
+        <div class="col-4"><strong>Code</strong></div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">10 Percent Off!</div>
+        <div class="col-4">Get 10 percent off on any purchase.</div>
+        <div class="col-4">10OFF</div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">20 Percent Off on 2!</div>
+        <div class="col-4">Buy 2 items and get 20 percent Off.</div>
+        <div class="col-4">20OFF2</div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">Buy 3 Get 1 Free!</div>
+        <div class="col-4">Buy 3 items and get the 4th one on us.</div>
+        <div class="col-4">BTGO</div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">Prof. Rojas Special!</div>
+        <div class="col-4">We get the HP and you get the full access.</div>
+        <div class="col-4">HPPLZ</div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2022-2022 Vinyl Hills</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="/returnpolicy">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+
+    </div> <!-- /container -->
+  </body>
+
+<style>
+body {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+.row {
+  margin-bottom: 1rem;
+}
+.row .row {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+[class*="col-"] {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(86, 61, 124, .15);
+  border: 1px solid rgba(86, 61, 124, .2);
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+</style>
+{% endblock %}

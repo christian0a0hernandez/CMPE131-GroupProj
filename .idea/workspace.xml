@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f23820c-47af-48cd-9c02-9cf078697150" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/website/templates/carousel.css" afterDir="false" />
+    <list default="true" id="5f23820c-47af-48cd-9c02-9cf078697150" name="Changes" comment="homepage updates">
+      <change afterPath="$PROJECT_DIR$/website/templates/checkout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/discounts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/addbrand.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/addbrand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/addproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/addproduct.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/edit-user-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/edit-user-profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/user-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/user-profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +86,14 @@
       <option name="presentableId" value="Default" />
       <updated>1651569382755</updated>
     </task>
+    <task id="LOCAL-00001" summary="homepage updates">
+      <created>1652596361358</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652596361358</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -101,5 +118,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="homepage updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="homepage updates" />
   </component>
 </project>
