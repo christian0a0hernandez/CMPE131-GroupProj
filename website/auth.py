@@ -244,3 +244,14 @@ def deleteartist(id):
         return redirect(url_for('views.home'))
     flash(f"The artist {category.name} can't be  deleted from your database")
     return redirect(url_for('views.home'))
+
+@auth.route('/deleteproduct/<int:id>', methods=['POST'])
+def deleteproduct(id):
+    product = Addproduct.query.get_or_404(id)
+    if request.method =="POST":
+        db.session.delete(product)
+        db.session.commit()
+        flash(f'The product {product.name} was delete from your record','success')
+        return redirect(url_for('views.home'))
+    flash(f'Can not delete the product', category = 'success')
+    return redirect(url_for('views.home'))
