@@ -126,23 +126,6 @@ def addcategory():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @auth.route('/addproduct', methods=['POST', 'GET'])
 def addproduct():
     brands = Brand.query.all()
