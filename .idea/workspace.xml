@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17bdadeb-7b2b-41a7-983f-1cef4e425bd6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/website/templates/genre.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/website/templates/updategenres.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/website/templates/updateproduct.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/website/templates/adminpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/adminpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/updategenres.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/updategenres.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652665983440</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added ability to edit database values.">
+      <created>1652682665695</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1652682665695</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +154,7 @@
     <MESSAGE value="edited html of add product page, added feature&#10;of adding photos to products" />
     <MESSAGE value="refined inventory system to add to database" />
     <MESSAGE value="added an admin page to view inventory" />
-    <option name="LAST_COMMIT_MESSAGE" value="added an admin page to view inventory" />
+    <MESSAGE value="added ability to edit database values." />
+    <option name="LAST_COMMIT_MESSAGE" value="added ability to edit database values." />
   </component>
 </project>
