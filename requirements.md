@@ -12,14 +12,14 @@
 10. Stock Check -Steven
 11. User Reviews -Joe
 12. User profiles -Christian
-13. Wish List
+13. Wish List - Steven
 
 ## Non-functional Requirements
 
 1. Dark Mode
 2. Interactive User Interface with simple design -Christian
 3. Will be able to work on multiple browsers
-4. Low latency/Fast Performance
+4. Low latency/Fast Performance ideally response time of ~ 1ms
 
 ## Use Cases
 
