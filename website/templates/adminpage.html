@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+
+{% block dablock %}
+
+
+<div class="container">
+<table class ="table table-sm">
+    <table class="table table-sm table-bordered">
+    <thead>
+        <th>Number</th>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Brand</th>
+        <th>Image</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tb>
+        {% for product in products %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.discount}}</td>
+            <td>{{product.brand.name}}</td>
+            <td><img src="{{url_for('static', filename ='images/' + product.image_1)}}" width ="200" height ="200"></td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+        {% endfor %}
+    </tb>
+</table>
+</div>
+{% endblock dablock %}

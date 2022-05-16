@@ -7,6 +7,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 
 
+
 auth = Blueprint('a', __name__)
 
 
@@ -146,3 +147,8 @@ def addproduct():
 
     return render_template('addproduct.html', title ="Add Product", form = form,user = current_user,
                            brands = brands,categories = categories)
+
+@auth.route('/adminpage')
+def adminpage():
+    products = Addproduct.query.all()
+    return render_template("adminpage.html", title='Admin Page', products = products, user = current_user)
