@@ -213,10 +213,34 @@ def updateproduct(id):
         product.category_id = category
         product.brand_id = brand
         db.session.commit()
-        flash(f"Product Updated!", category = "success")
+        flash(f"Product Updated!", category="success")
     form.name.data = product.name
     form.price.data = product.price
     form.description.data = product.description
     form.stock.data = product.stock
     form.discount.data = product.discount
-    return render_template('updateproduct.html', form=form, user=current_user, brands = brands, categories = categories, product = product )
+    return render_template('updateproduct.html', form=form, user=current_user, brands=brands, categories=categories,
+                           product=product)
+
+
+@auth.route('/deletegenre/<int:id>', methods=['GET','POST'])
+def deletegenre(id):
+    brand = Brand.query.get_or_404(id)
+    if request.method=="POST":
+        db.session.delete(brand)
+        flash(f"The genre {brand.name} was deleted from your database")
+        db.session.commit()
+        return redirect(url_for('views.home'))
+    flash(f"The genre {brand.name} can't be  deleted from your database")
+    return redirect(url_for('views.home'))
+
+@auth.route('/deleteartist/<int:id>', methods=['GET','POST'])
+def deleteartist(id):
+    category = Category.query.get_or_404(id)
+    if request.method=="POST":
+        db.session.delete(category)
+        flash(f"The artist {category.name} was deleted from your database")
+        db.session.commit()
+        return redirect(url_for('views.home'))
+    flash(f"The artist {category.name} can't be  deleted from your database")
+    return redirect(url_for('views.home'))
