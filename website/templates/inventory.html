@@ -1,8 +1,56 @@
 {% extends "base.html" %}
 {% block dablock %}
+
+
 <div class ="container">
     <div class ="row">
-        {% for product in products %}
+{% if brand %}
+     {% for b in brand %}
+            <div class ="col-md-3 mt-3">
+                    <div class ="card">
+                        <img src="{{url_for('static', filename='images/' + b.image_1)}}" class="card-img-top" alt="{{b.name}}" height="200" width="200">
+                        <div class ="card-body">
+                            {% if b.discount > 0 %}
+                             <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg);
+                             position: absolute; top: 23%; left: 25%; font-weight: 600;"> Discount {{b.discount}} %!!</h5>
+                            {%endif%}
+                            <h5 class = "text-cent">{{b.name}}</h5>
+                            <p class ="text-center">Price ${{b.price}}</p>
+                        </div>
+                        <div class ="card-footer">
+                            <a href="#" class = "float-left btn btn-sm-primary"> Details</a> <a href ="#" class="float-right
+                            btn btn-sm btm-warning"> Add to cart</a>
+                    </div>
+            </div>
+        {%endfor%}
+
+{% elif brand %}
+     {% for b in brand %}
+            <div class ="col-md-3 mt-3">
+                    <div class ="card">
+                        <img src="{{url_for('static', filename='images/' + b.image_1)}}" class="card-img-top" alt="{{b.name}}" height="200" width="200">
+                        <div class ="card-body">
+                            {% if b.discount > 0 %}
+                             <h5 style="text-shadow: 1px 2px 2px #000; color: #f00; transform: rotate(-15deg);
+                             position: absolute; top: 23%; left: 25%; font-weight: 600;"> Discount {{b.discount}} %!!</h5>
+                            {%endif%}
+                            <h5 class = "text-cent">{{b.name}}</h5>
+                            <p class ="text-center">Price ${{b.price}}</p>
+                        </div>
+                        <div class ="card-footer">
+                            <a href="#" class = "float-left btn btn-sm-primary"> Details</a> <a href ="#" class="float-right
+                            btn btn-sm btm-warning"> Add to cart</a>
+                    </div>
+            </div>
+        {%endfor%}
+
+
+
+
+{%else%}
+
+
+{% for product in products %}
             <div class ="col-md-3 mt-3">
                     <div class ="card">
                         <img src="{{url_for('static', filename='images/' + product.image_1)}}" class="card-img-top" alt="{{product.name}}" height="200" width="200">
@@ -19,7 +67,9 @@
                             btn btn-sm btm-warning"> Add to cart</a>
                     </div>
             </div>
-    {%endfor %}
+    {% endfor %}
+{%endif%}
+
 </div>
 
 

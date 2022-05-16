@@ -255,9 +255,34 @@ def deleteproduct(id):
 
 @auth.route('/inventory')
 def inventory():
-    products = Addproduct.query.filter(Addproduct.stock > 0)
+    page = request.args.get('page',1,type=int)
+    products = Addproduct.query.filter(Addproduct.stock > 0).paginate(page = page, per_page = 4)
+    brands =Brand.query.join(Addproduct, (Brand.id ==Addproduct.brand_id)).all().paginate()
+    categories = Category.query.join(Addproduct,(Category.id == Addproduct.category_id)).all()
 
-    return render_template('inventory.html', user = current_user, products = products)
+    return render_template('inventory.html', user = current_user, products = products, brands = brands,categories = categories)
+
+@auth.route('/genres/<int:id>')
+def get_genre(id):
+    brand = Addproduct.query.filter_by(brand_id=id)
+    brands =Brand.query.join(Addproduct, (Brand.id ==Addproduct.brand_id)).all()
+    categories = Category.query.join(Addproduct,(Category.id == Addproduct.category_id)).all()
+    products = Addproduct.query.filter(Addproduct.stock > 0)
+    return render_template('inventory.html', brand= brand, brands= brands, user = current_user, products =products,categories = categories)
+
+
+@auth.route('/artists/<int:id>')
+def get_artist(id):
+    category = Addproduct.query.filter_by(category_id=id)
+    brands = Brand.query.join(Addproduct, (Brand.id ==Addproduct.brand_id)).all()
+    categories = Category.query.join(Addproduct,(Category.id == Addproduct.category_id)).all()
+    products = Addproduct.query.filter(Addproduct.stock > 0)
+    artists = Category.query.order_by(Category.id.desc()).all()
+
+    return render_template('inventory.html', artists = artists, category = category, products =products, categories = categories,brands = brands, user = current_user)
+
+
+
 
 @auth.route('/checkout') # creates a page for checkouts
 def checkout():
