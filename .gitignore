@@ -2,3 +2,4 @@
 /website/database.db
 /.idea
 *.pyc
+/website/static/

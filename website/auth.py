@@ -1,11 +1,15 @@
+
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
-from .models import User, Brand, Category
-from . import db
+from .models import User, Brand, Category, Addproduct
+from . import db, photos
 from .forms import Addproducts
 from flask_login import login_user, login_required, logout_user, current_user
 
 
+
 auth = Blueprint('a', __name__)
+
+
 
 @auth.route('/login', methods=['GET', 'POST']) #create a log in page
 def login():
@@ -121,5 +125,24 @@ def addproduct():
     brands = Brand.query.all()
     categories =Category.query.all()
     form = Addproducts(request.form)
+    if request.method =="POST":
+        name = form.name.data
+        price = form.price.data
+        discount = form.discount.data
+        stock = form.stock.data
+        description = form.description.data
+        brand = request.form.get('brand')
+        category =request.form.get('category')
+        image_1 = photos.save(request.files.get('image_1'))
+        image_2 = photos.save(request.files.get('image_2'))
+        image_3 = photos.save(request.files.get('image_3'))
+        addpro = Addproduct(name = name, price = price, discount = discount, stock = stock, description = description,
+                             brand_id = brand, category_id = category, image_1 = image_1, image_2 = image_2,
+                             image_3 = image_3)
+        db.session.add(addpro)
+        flash(f'Product {name} added!!', category= 'success')
+        db.session.commit()
+        return redirect(url_for('views.home'))
+
     return render_template('addproduct.html', title ="Add Product", form = form,user = current_user,
                            brands = brands,categories = categories)
