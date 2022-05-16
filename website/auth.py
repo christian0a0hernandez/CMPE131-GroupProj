@@ -123,26 +123,6 @@ def addcategory():
 
     return render_template('addbrand.html', user=current_user)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @auth.route('/addproduct', methods=['POST', 'GET'])
 def addproduct():
     brands = Brand.query.all()
@@ -166,7 +146,6 @@ def addproduct():
         flash(f'Product {name} added!!', category='success')
         db.session.commit()
         return redirect(url_for('views.home'))
-
     return render_template('addproduct.html', title="Add Product", form=form, user=current_user,
                            brands=brands, categories=categories)
 
@@ -277,12 +256,8 @@ def deleteproduct(id):
 @auth.route('/inventory')
 def inventory():
     products = Addproduct.query.filter(Addproduct.stock > 0)
-    brands = Brands.query.all()
 
-    return render_template('inventory.html', user = current_user, products = products, brands = brands)
-=======
-    return render_template('addproduct.html', title ="Add Product", form = form,user = current_user,
-                           brands = brands,categories = categories)
+    return render_template('inventory.html', user = current_user, products = products)
 
 @auth.route('/checkout') # creates a page for checkouts
 def checkout():
