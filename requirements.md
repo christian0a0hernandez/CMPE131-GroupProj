@@ -13,6 +13,8 @@
 11. User Reviews -Joe
 12. User profiles -Christian
 13. Wish List - Steven
+14. About Section
+15. Support Page
 
 ## Non-functional Requirements
 
