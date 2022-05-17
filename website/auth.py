@@ -395,3 +395,13 @@ def checkout():
 @auth.route('/discounts')  # creates a page for discount offers
 def discounts():
     return render_template("discounts.html", user=current_user)
+
+@auth.route('/like_action/<int:product_id>/<action>')
+@login_required
+def like_action(product_id, action):
+    product = Addproduct.query.filter_by(id=product_id).first_or_404()
+    if action == 'like':
+        return redirect('single_page')
+    if action == 'unlike':
+        return redirect('single_page')
+    return redirect('single_page')
