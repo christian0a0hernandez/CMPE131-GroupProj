@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 {% block dablock %}
 
-<div class ="grid-container">
-    <div class ="grid-item">
-
 <div class ="container">
     <div class ="row">
+
 {% for product in products %}
             <div class ="col-md-3 mt-3">
                     <div class ="card">
@@ -26,23 +24,10 @@
         </form>
                     </div>
             </div>
+    {% endfor %}
 
-                         </div>
-                    </div>
-            </div>
-    </div>
-    {%endfor %}
-    <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2022-2022 Vinyl Hills</p>
-        <ul class="list-inline">
-        <li class="list-inline-item"><a href="/returnpolicy">Terms</a></li>
-        <li class="list-inline-item"><a href="/contact">Support</a></li>
-        </ul>
-    </footer>
-
-                    </div>
-            </div>
 </div>
+
 
 
 {% endblock dablock %}

@@ -11,14 +11,15 @@ This purpose of this website program is for Vinyl enthusiasts & collectors to bu
 * Steven Stansberry - Login, create new account, stock check          
 * Christian Hernandez - My shopping cart, my wish list, user profiles   
 * Joseph Guzman - Return policy, user reviews                     
-* Inderpreet Singh - Delete account, search bar, discount promotions 
+* Inderpreet Singh - Delete account, search bar, discount promotions, homepage, checkout, support page
    
 ### Non Functional Requirments ###
 There are 4 non- functional requirments: 
-* Dark mode
-* Interactve user interface with simple design
-* Ability to run on multiple browsers
-* Low latency/fast performance
+*Meet the team github accounts.
+*Interactive User Interface with simple design -Christian
+*Will be able to work on multiple browsers
+*Low latency/Fast Performance ideally response time of ~ 1ms
+*Sliding sections on the homepage.
 
 ## Install the following packages using the linux command in your terminal ##
 
@@ -27,8 +28,11 @@ There are 4 non- functional requirments:
 `pip install flask-sqlalchemy`
 `pip install flask-wtf`
 `pip install flask_uploads`
-`pip install -U Werkzeug==0.16.0`
+`pip install Werkzeug`
 `pip install Flask-Reuploaded`
+`pip install flask-msearch`
+`pip install pandas`
+
 
 ##  Installtion & Setup  ##
 Install the program into your system using the following linux command: 

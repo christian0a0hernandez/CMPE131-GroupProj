@@ -2,8 +2,68 @@
 {% block title  %}Delete Account{% endblock %}
 
 {% block dablock %}
-<form method ="POST">
-    <h3 align ="center"Delete Account></h3>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+    </style>
+
+  </head>
+  <body class="text-center">
+
+<main class="form-delete w-100 m-auto">
+  <form method="POST">
+    <img class="mb-4" src="https://cdn.discordapp.com/attachments/944007141688242226/975674774695071784/20220516_0123080.29187647859901744.png" alt="" width="200" height="200">
+    <h1 class="h3 mb-3 fw-normal">Delete Account</h1>
     <div class ="form-group">
         <label for ="email">Email Address</label>
             <input type="email"
@@ -44,12 +104,12 @@
     <button type ="submit" class="btn btn-primary">Delete</button>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
-      <p class="mb-1">&copy; 2022-2022 Vinyl Hills</p>
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <p class="mb-1">&copy; 2022-2022 Vinyl Hills</p>
+        <ul class="list-inline">
         <li class="list-inline-item"><a href="/returnpolicy">Terms</a></li>
-        <li class="list-inline-item"><a href="#">Support</a></li>
-      </ul>
+        <li class="list-inline-item"><a href="/contact">Support</a></li>
+        </ul>
     </footer>
 </form>
+</main>
 {% endblock %}

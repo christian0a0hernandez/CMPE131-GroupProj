@@ -13,5 +13,8 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
     mkdocs.yml    # The configuration file.
     docs/
+        pages/
+            aboutUs.md
+            about.md      # The page about the website and its creators
+            tutorial.md   # Page for how to use website
         index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
