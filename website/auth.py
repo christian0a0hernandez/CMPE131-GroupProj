@@ -95,6 +95,7 @@ def delete_user():
 
 
 
+
 @auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
 @login_required
 def userProfile():
@@ -102,19 +103,14 @@ def userProfile():
     return render_template("user-profile.html", user=current_user)
 
 
-@auth.route('/editUserProfile', methods=['GET', 'POST'])  # routes to Profile editing page
-@login_required
+@auth.route('/edit-user-profile')  # routes to Profile editing page
 def editUserProfile():
-    if request.method == 'POST':
-        current_user.id = request.form.get('id')
-        current_user.firstName = request.form.get('firstName')
-        current_user.email = request.form.get('email')
-        current_user.password = request.form.get('password')
-        db.session.commit()
-        flash('Your changes have been saved.')
-        return redirect(url_for('user-profile'))
+@auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
+@login_required
+def userProfile():
+    user = User.query.filter_by(id=current_user.id).first_or_404()
+    return render_template("user-profile.html", user=current_user)
 
-    return render_template("edit-user-profile.html", user=current_user)
 
 
 @auth.route('/addbrand', methods=['GET', 'POST'])
@@ -130,7 +126,13 @@ def addbrand():
     return render_template('addbrand.html', user=current_user, brands='brands')
 
 
+
+@auth.route('/genre', methods=['GET', 'POST'])
+
+
+
 @auth.route('/addcategory', methods=['GET', 'POST'])
+
 def addcategory():
     if request.method == "POST":
         getbrand = request.form.get('category')
@@ -373,7 +375,6 @@ def deleteitem(id):
     except Exception as e:
         print(e)
         return redirect(url_for('a.getCart'))
-
 
 @auth.route('/addwish', methods=['POST', 'GET'])
 def AddWish():
