@@ -342,6 +342,36 @@ def getCart():
         grandtotal = subtotal
     return render_template('/carts.html', user = current_user, grandtotal = grandtotal)
 
+
+
+@auth.route('/addwish', methods=['POST', 'GET'])
+def AddWish():
+    try:
+        product_id = request.form.get('product_id')
+        quantity = request.form.get('quantity')
+        product = Addproduct.query.filter_by(id=product_id).first()
+        if product_id and quantity and request.method == "POST":
+            DictItems = {product_id: {'name': product.name, 'price': product.price, 'discount': product.discount,
+                                      'quantity': quantity, 'image': product.image_1}}
+            if 'ShopcartWish' in session:
+                print(session['ShoppingcartWish'])
+                if product_id in session['ShoppingcartWish']:
+                    print("Item already in cart")
+            else:
+                session['ShoppingcartWish'] = MagerDicts(session['ShoppingcartWish'], DictItems)
+                return redirect(request.referrer)
+        else:
+            session['ShoppingcartWish'] =DictItems
+            return redirect(request.referrer)
+    except Exception as e:
+        print(e)
+    finally:
+        return redirect(request.referrer)
+
+@auth.route('/wish')
+def getWish():
+    return render_template('/wish.html', user = current_user)
+
 @auth.route('/checkout')  # creates a page for checkouts
 def checkout():
     return render_template("checkout.html", user=current_user)
