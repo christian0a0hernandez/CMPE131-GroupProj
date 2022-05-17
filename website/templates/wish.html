@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block dablock %}
+<h1>Welcome to your wish list!</h1>
+<div class = "container">
+    <div class="row">
+         <table class="table table-sm">
+             <thead>
+             <th>Name</th>
+             <th>Image</th>
+             <th>Price</th>
+             <th>Quantity</th>
+             <th>Add to cart!</th>
+             <th>Delete</th>
+             </thead>
+             <tbody>
+             {% for key, product in session['Shoppingcart'].items() %}
+             <tr>
+                 <td>{{product.name}}</td>
+                 <td><img src="{{url_for('static',filename='images/'+ product.image)}}" alt="{{product.name}}" width="50" height="45"></td>
+                 <td>${{product.price}}</td>
+                 <td>{{product.quantity}}</td>
+                 <td><button type ="submit" class ="btn btn-sm btn-warning"> Add to cart</button></td>
+                 <td><a href="{{url_for('a.deleteitem', id=key)}}">Delete</a></td>
+             {%endfor%}
+
+             </tbody>
+        <td> <a href="{{url_for('a.getCart')}}" class="btn btn-success"> Go to shopping cart </a> </td>
+         </table>
+</div>
+{% endblock dablock %}

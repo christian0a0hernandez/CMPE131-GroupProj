@@ -6,6 +6,7 @@ from . import db
 
 
 class Addproduct(db.Model):
+    __searchable__ = ['name','description']
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     price = db.Column(db.Numeric(10, 2), nullable=False)
@@ -43,3 +44,16 @@ class Brand(db.Model):  # creates a brand
 class Category(db.Model):  # creates a category
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False, unique=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
