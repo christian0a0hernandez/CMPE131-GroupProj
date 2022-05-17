@@ -13,8 +13,8 @@
 11. User Reviews -Joe
 12. User profiles -Christian
 13. Wish List - Steven
-14. About Section
-15. Support Page
+14. Checkout - Inderpreet Singh
+15. Support Page (Contact Us) - Inderpreet Singh
 
 ## Non-functional Requirements
 
