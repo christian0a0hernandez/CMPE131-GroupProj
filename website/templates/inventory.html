@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block dablock %}
-<div class ="container">
-    <div class ="row">
+
+<div class ="grid-container">
+    <div class ="grid-item">
         {% for product in products %}
             <div class ="col-md-3 mt-3">
                     <div class ="card">
@@ -15,11 +16,20 @@
                             <p class ="text-center">Price ${{product.price}}</p>
                         </div>
                         <div class ="card-footer">
-                            <a href="#" class = "float-left btn btn-sm-primary"> Details</a> <a href ="#" class="float-right
-                            btn btn-sm btm-warning"> Add to cart</a>
+                            <a href="#" class = "float-left btn btn-sm-primary"> Details</a>
+                            <a href ="#" class="float-right btn btn-sm btm-warning"> Add to cart</a>
+                         </div>
                     </div>
             </div>
+    </div>
     {%endfor %}
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2022-2022 Vinyl Hills</p>
+        <ul class="list-inline">
+        <li class="list-inline-item"><a href="/returnpolicy">Terms</a></li>
+        <li class="list-inline-item"><a href="/contact">Support</a></li>
+        </ul>
+    </footer>
 </div>
 
 

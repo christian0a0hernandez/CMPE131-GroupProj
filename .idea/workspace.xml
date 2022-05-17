@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f23820c-47af-48cd-9c02-9cf078697150" name="Changes" comment="" />
+    <list default="true" id="5f23820c-47af-48cd-9c02-9cf078697150" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/website/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/auth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/website/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/website/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/addbrand.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/addbrand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/addproduct.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/addproduct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/adminpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/adminpage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/discounts.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/discounts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/edit-user-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/edit-user-profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/genre.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/genre.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/inventory.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/inventory.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/sign-up.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/sign-up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/updateartists.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/updateartists.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/updategenres.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/updategenres.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website/templates/user-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/website/templates/user-profile.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

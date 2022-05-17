@@ -16,3 +16,10 @@ class Addproducts(Form):
     image_1 = FileField('Image 1', validators=[FileRequired(), FileAllowed(['jpg', 'png'])])
     image_2 = FileField('Image 1', validators=[FileRequired(), FileAllowed(['jpg', 'png'])])
     image_3 = FileField('Image 1', validators=[FileRequired(), FileAllowed(['jpg', 'png'])])
+
+class ContactForm(Form):
+    name = StringField("Name")
+    email = StringField("Email")
+    subject = StringField("Subject")
+    message = TextAreaField("Message")
+    submit = SubmitField("Send")
