@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% block dablock %}
+<div class = "container">
+    <div class="row">
+         <table class="table table-sm">
+             <thead>
+             <th>Index</th>
+             <th>Name</th>
+             <th>Price</th>
+             <th>Quantity</th>
+             <th>Discount</th>
+             <th>Subtotal</th>
+             <th>Update</th>
+             <th>Delete</th>
+             </thead>
+             <tbody>
+             {% for key, product in session['Shoppingcart'].items() %}
+             {% set discount =(product.discount/100) * product.price|float %}
+             <tr>
+                 <td>{{loop.index}}</td>
+                 <td>{{product.name}}</td>
+                 <td>${{product.price}}</td>
+                 <td>{{product.quantity}}</td>
+                 {%if product.discount > 0%}
+                 <td>{{product.discount}}%</td>
+                 {%else%}
+                 <td></td>
+                 {%endif%}
+                 {% set subtotal = product.quantity| int * product.price| float %}
+                 <td>{{"%0.2f" |format ((subtotal|float) - (discount|float * product.quantity| int))}}</td>
+                 <td><button type="submit" class="btn btn-sm btn-info">Update</button> </td>
+                 <td><a href="/">Remove</a></td>
+             </tr>
+             {%endfor%}
+             <tr>
+                 <td><a href="/">Continue Shopping</a></td>
+                 <td colspan="3">We don't pay taxes here!</td>
+                 <td colspan="3"><h3>Total: ${{grandtotal}}</h3></td>
+             </tr>
+             </tbody>
+
+         </table>
+</div>
+{% endblock dablock %}
+

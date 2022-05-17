@@ -111,6 +111,7 @@ def addbrand():
 
     return render_template('addbrand.html', user=current_user, brands='brands')
 
+
 @auth.route('/addcategory', methods=['GET', 'POST'])
 def addcategory():
     if request.method == "POST":
@@ -122,6 +123,7 @@ def addcategory():
         return redirect(url_for('a.addbrand'))
 
     return render_template('addbrand.html', user=current_user)
+
 
 @auth.route('/addproduct', methods=['POST', 'GET'])
 def addproduct():
@@ -220,10 +222,10 @@ def updateproduct(id):
                            product=product)
 
 
-@auth.route('/deletegenre/<int:id>', methods=['GET','POST'])
+@auth.route('/deletegenre/<int:id>', methods=['GET', 'POST'])
 def deletegenre(id):
     brand = Brand.query.get_or_404(id)
-    if request.method=="POST":
+    if request.method == "POST":
         db.session.delete(brand)
         flash(f"The genre {brand.name} was deleted from your database")
         db.session.commit()
@@ -231,10 +233,11 @@ def deletegenre(id):
     flash(f"The genre {brand.name} can't be  deleted from your database")
     return redirect(url_for('views.home'))
 
-@auth.route('/deleteartist/<int:id>', methods=['GET','POST'])
+
+@auth.route('/deleteartist/<int:id>', methods=['GET', 'POST'])
 def deleteartist(id):
     category = Category.query.get_or_404(id)
-    if request.method=="POST":
+    if request.method == "POST":
         db.session.delete(category)
         flash(f"The artist {category.name} was deleted from your database")
         db.session.commit()
@@ -242,52 +245,108 @@ def deleteartist(id):
     flash(f"The artist {category.name} can't be  deleted from your database")
     return redirect(url_for('views.home'))
 
+
 @auth.route('/deleteproduct/<int:id>', methods=['POST'])
 def deleteproduct(id):
     product = Addproduct.query.get_or_404(id)
-    if request.method =="POST":
+    if request.method == "POST":
         db.session.delete(product)
         db.session.commit()
-        flash(f'The product {product.name} was delete from your record','success')
+        flash(f'The product {product.name} was delete from your record', 'success')
         return redirect(url_for('views.home'))
-    flash(f'Can not delete the product', category = 'success')
+    flash(f'Can not delete the product', category='success')
     return redirect(url_for('views.home'))
+
 
 @auth.route('/inventory')
 def inventory():
-    page = request.args.get('page',1,type=int)
-    products = Addproduct.query.filter(Addproduct.stock > 0).paginate(page = page, per_page = 4)
-    brands =Brand.query.join(Addproduct, (Brand.id ==Addproduct.brand_id)).all().paginate()
-    categories = Category.query.join(Addproduct,(Category.id == Addproduct.category_id)).all()
+    products = Addproduct.query.filter(Addproduct.stock > 0)
+    brands = Brand.query.join(Addproduct, (Brand.id == Addproduct.brand_id)).all()
+    categories = Category.query.join(Addproduct, (Category.id == Addproduct.category_id)).all()
 
-    return render_template('inventory.html', user = current_user, products = products, brands = brands,categories = categories)
+    return render_template('inventory.html', user=current_user, products=products, brands=brands, categories=categories)
+
+
+@auth.route('/product/<int:id>')
+def single_page(id):
+    product = Addproduct.query.get_or_404(id)
+    return render_template('single_page.html', product=product, user=current_user)
+
 
 @auth.route('/genres/<int:id>')
 def get_genre(id):
     brand = Addproduct.query.filter_by(brand_id=id)
-    brands =Brand.query.join(Addproduct, (Brand.id ==Addproduct.brand_id)).all()
-    categories = Category.query.join(Addproduct,(Category.id == Addproduct.category_id)).all()
+    brands = Brand.query.join(Addproduct, (Brand.id == Addproduct.brand_id)).all()
+    categories = Category.query.join(Addproduct, (Category.id == Addproduct.category_id)).all()
     products = Addproduct.query.filter(Addproduct.stock > 0)
-    return render_template('inventory.html', brand= brand, brands= brands, user = current_user, products =products,categories = categories)
+    return render_template('inventory.html', brand=brand, brands=brands, user=current_user, products=products,
+                           categories=categories)
 
 
 @auth.route('/artists/<int:id>')
 def get_artist(id):
     category = Addproduct.query.filter_by(category_id=id)
-    brands = Brand.query.join(Addproduct, (Brand.id ==Addproduct.brand_id)).all()
-    categories = Category.query.join(Addproduct,(Category.id == Addproduct.category_id)).all()
+    brands = Brand.query.join(Addproduct, (Brand.id == Addproduct.brand_id)).all()
+    categories = Category.query.join(Addproduct, (Category.id == Addproduct.category_id)).all()
     products = Addproduct.query.filter(Addproduct.stock > 0)
     artists = Category.query.order_by(Category.id.desc()).all()
 
-    return render_template('inventory.html', artists = artists, category = category, products =products, categories = categories,brands = brands, user = current_user)
+    return render_template('inventory.html', artists=artists, category=category, products=products,
+                           categories=categories, brands=brands, user=current_user)
 
 
+def MagerDicts(dict1, dict2):
+    if isinstance(dict1, list) and isinstance(dict2, list):
+        return dict1 + dict2
+    elif isinstance(dict1, dict) and isinstance(dict2, dict):
+        return dict(list(dict1.items()) + list(dict2.items()))
+    return False
 
 
-@auth.route('/checkout') # creates a page for checkouts
+@auth.route('/addcart', methods=['POST', 'GET'])
+def AddCart():
+    try:
+        product_id = request.form.get('product_id')
+        quantity = request.form.get('quantity')
+        product = Addproduct.query.filter_by(id=product_id).first()
+        if product_id and quantity and request.method == "POST":
+            DictItems = {product_id: {'name': product.name, 'price': product.price, 'discount': product.discount,
+                                      'quantity': quantity, 'image': product.image_1}}
+            if 'Shopcart' in session:
+                print(session['Shoppingcart'])
+                if product_id in session['Shoppingcart']:
+                    print("Item already in cart")
+            else:
+                session['Shoppingcart'] = MagerDicts(session['Shoppingcart'], DictItems)
+                return redirect(request.referrer)
+        else:
+            session['Shoppingcart'] =DictItems
+            return redirect (request.referrer)
+    except Exception as e:
+        print(e)
+    finally:
+        return redirect(request.referrer)
+
+
+@auth.route('/carts')
+def getCart():
+    if 'Shoppingcart' not in session:
+        flash("Cart empty!", category="warning")
+        return redirect(request.referrer)
+    subtotal = 0
+    grandtotal = 0
+    for key, product in session ['Shoppingcart'].items():
+        discount = (product['discount']/100) * float(product['price'])
+        subtotal += float(product['price']) * int(product['quantity'])
+        subtotal -= discount
+        grandtotal = subtotal
+    return render_template('/carts.html', user = current_user, grandtotal = grandtotal)
+
+@auth.route('/checkout')  # creates a page for checkouts
 def checkout():
-    return render_template("checkout.html",user = current_user)
+    return render_template("checkout.html", user=current_user)
 
-@auth.route('/discounts') # creates a page for discount offers
+
+@auth.route('/discounts')  # creates a page for discount offers
 def discounts():
-    return render_template("discounts.html",user = current_user)
+    return render_template("discounts.html", user=current_user)
