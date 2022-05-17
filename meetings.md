@@ -30,3 +30,10 @@ We helped each other with some errors that were due to the virtual enviroenment 
 Steven, Inderpreet, Joe
 Meeting last 45 minutes
 We updated each other on how our work is going. We decided to reorganize who is going to work on what. We demonstrated some code togehter and planned out how we're going to integrate the inventory system with the UI to make it look nice. We also vowed to spend the remainder of time until the due date on open notice for us to help each other out.
+
+## 2022-05-16 at 7:20 pm 
+Steven, Inderpreet, Joe
+Meeting last 20 mins
+Group disscused about updating the front home page to add the inventory manager page. Two additional functional reqirements is wishlist and user profiles. We also created a bio for our developer page. Joe is woking on updatting the gannt chart,user reviews and Singh is working on the checkout functional requirment. 
+
+

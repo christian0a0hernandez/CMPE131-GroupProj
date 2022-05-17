@@ -28,6 +28,7 @@
             <li><a href="/home" class="nav-link px-2 text-secondary">Home</a></li>
         </ul>
             {% if user.is_authenticated %}
+
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="/inventory" class="nav-link px-2 text-white">Store</a></li>
                 <li><a href="/addproduct" class="nav-link px-2 text-white">+Product</a></li>
@@ -38,6 +39,16 @@
                 <li><a href="/checkout" class="nav-link px-2 text-white">Checkout</a></li>
                 <li><a href="/logout" class="nav-link px-2 text-white">Logout</a></li>
             </ul>
+
+            <a class ="nav-item nv-link" id="addproduct" href="/addproduct">|        Add a Product    |</a>
+            <a class ="nav-item nv-link" id="addbrand" href="/addbrand">|        Add a genre    |</a>
+            <a class ="nav-item nv-link" id="addcategory" href="/addcategory">|        Add an artist    |</a>
+
+            <a class ="nav-item nv-link" id="logout" href="/logout">|        Logout    |</a>
+            <a class ="nav-item nv-link" id="userProfile" href="/userProfile">|       View Profile    |</a>
+            <a class ="nav-item nv-link" id="editUserProfile" href="/editUserProfile">|        Edit Profile    |</a>
+            <a class ="nav-item nv-link" id="checkout" href="/checkout">|        Checkout    |</a>
+
             {% else %}
             <div class="text-end">
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">

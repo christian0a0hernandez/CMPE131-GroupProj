@@ -3,6 +3,9 @@
 
 <div class ="grid-container">
     <div class ="grid-item">
+
+<div class ="container">
+    <div class ="row">
         {% for product in products %}
             <div class ="col-md-3 mt-3">
                     <div class ="card">
@@ -16,6 +19,7 @@
                             <p class ="text-center">Price ${{product.price}}</p>
                         </div>
                         <div class ="card-footer">
+
                             <a href="#" class = "float-left btn btn-sm-primary"> Details</a>
                             <a href ="#" class="float-right btn btn-sm btm-warning"> Add to cart</a>
                          </div>
@@ -30,6 +34,13 @@
         <li class="list-inline-item"><a href="/contact">Support</a></li>
         </ul>
     </footer>
+
+                            <a href="#" class = "float-left btn btn-sm-primary"> Details</a> <a href ="#" class="float-right
+                            btn btn-sm btm-warning"> Add to cart</a>
+                    </div>
+            </div>
+    {%endfor %}
+
 </div>
 
 
