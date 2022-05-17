@@ -85,17 +85,24 @@ def delete_user():
     return render_template("delete.html", user=current_user)
 
 
-@auth.route('/userProfile')  # routes to user Profile page; still need to test
+@auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
+@login_required
 def userProfile():
-    name = "Christian Hernandez"
-    vinylsSold = "241"
-    followers = "841"
-    return render_template("user-profile.html", name=name, vinylsSold=vinylsSold, followers=followers,
-                           user=current_user)
+    user = User.query.filter_by(id=current_user.id).first_or_404()
+    return render_template("user-profile.html", user=current_user)
 
 
-@auth.route('/editUserProfile')  # routes to Profile editing page
+@auth.route('/editUserProfile', methods=['GET', 'POST'])  # routes to Profile editing page
+@login_required
 def editUserProfile():
+    if request.method == 'POST':
+        current_user.id = request.form.get('id')
+        current_user.firstName = request.form.get('firstName')
+        current_user.email = request.form.get('email')
+        current_user.password = request.form.get('password')
+        db.session.commit()
+        flash('Your changes have been saved.')
+        return redirect(url_for('user-profile'))
     return render_template("edit-user-profile.html", user=current_user)
 
 
