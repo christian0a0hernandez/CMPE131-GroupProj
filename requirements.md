@@ -22,6 +22,7 @@
 2. Interactive User Interface with simple design -Christian
 3. Will be able to work on multiple browsers
 4. Low latency/Fast Performance ideally response time of ~ 1ms
+5. Sliding sections on the homepage.
 
 ## Use Cases
 
