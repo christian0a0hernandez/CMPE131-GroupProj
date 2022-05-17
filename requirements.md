@@ -24,6 +24,7 @@
 4. Low latency/Fast Performance ideally response time of ~ 1ms
 5. Sliding sections on the homepage.
 
+
 ## Use Cases
 
 1. Search bar

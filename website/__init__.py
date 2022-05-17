@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
 from flask_uploads import IMAGES, UploadSet, configure_uploads
+from flask_msearch import Search
 
 import os
 
@@ -14,6 +15,8 @@ photos = UploadSet('photos', IMAGES)
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
+search = Search()
+
 
 def create_app(): #initalizing flask
     app = Flask(__name__)
@@ -23,7 +26,7 @@ def create_app(): #initalizing flask
     configure_uploads(app, photos)
 
     db.init_app(app)
-
+    search.init_app(app)
 
     from .views import views
     from .auth import auth
