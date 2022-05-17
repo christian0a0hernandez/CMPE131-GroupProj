@@ -27,11 +27,11 @@
                  {%endif%}
                  {% set subtotal = product.quantity| int * product.price| float %}
                  <td>{{"%0.2f" |format ((subtotal|float) - (discount|float * product.quantity| int))}}</td>
-                 <td><button type="submit" class="btn btn-sm btn-danger">Delete</button> </td>
+                 <td><a href="{{url_for('a.deleteitem', id=key)}}">Delete</a></td>
              </tr>
              {%endfor%}
              <tr>
-                 <td><a href="/">Continue Shopping</a></td>
+                 <td><a href="/inventory">Continue Shopping</a></td>
                  <td colspan="3">We don't pay taxes here!</td>
                  <td colspan="3"><h3>Total: ${{grandtotal}}</h3></td>
              </tr>

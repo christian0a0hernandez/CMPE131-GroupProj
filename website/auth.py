@@ -342,6 +342,21 @@ def getCart():
         grandtotal = subtotal
     return render_template('/carts.html', user = current_user, grandtotal = grandtotal)
 
+@auth.route('/deleteitem/<int:id>')
+def deleteitem(id):
+    if 'Shoppingcart' not in session and len(session['Shoppingcart']) <= 0:
+        return redirect(url_for('views.home'))
+    try:
+        session.modified = True
+        for key, item in session['Shoppingcart'].items():
+            if int(key) ==id:
+                session['Shoppingcart'].pop(key,None)
+                return redirect(url_for('a.getCart'))
+    except Exception as e:
+        print(e)
+        return redirect(url_for('a.getCart'))
+
+
 
 
 @auth.route('/addwish', methods=['POST', 'GET'])

@@ -20,7 +20,7 @@
                  <td>${{product.price}}</td>
                  <td>{{product.quantity}}</td>
                  <td><button type ="submit" class ="btn btn-sm btn-warning"> Add to cart</button></td>
-                 <td><button type="submit" class="btn btn-sm btn-danger">Delete</button> </td>
+                 <td><a href="{{url_for('a.deleteitem', id=key)}}">Delete</a></td>
              {%endfor%}
 
              </tbody>
