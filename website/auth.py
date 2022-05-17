@@ -94,13 +94,13 @@ def delete_user():
     return render_template("delete.html", user=current_user)
 
 
-@auth.route('/user-profile')  # routes to user Profile page; still need to test
+
+
+@auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
+@login_required
 def userProfile():
-    name = "Christian Hernandez"
-    vinylsSold = "241"
-    followers = "841"
-    return render_template("user-profile.html", name=name, vinylsSold=vinylsSold, followers=followers,
-                           user=current_user)
+    user = User.query.filter_by(id=current_user.id).first_or_404()
+    return render_template("user-profile.html", user=current_user)
 
 
 @auth.route('/edit-user-profile')  # routes to Profile editing page
@@ -111,20 +111,6 @@ def userProfile():
     user = User.query.filter_by(id=current_user.id).first_or_404()
     return render_template("user-profile.html", user=current_user)
 
-
-@auth.route('/editUserProfile', methods=['GET', 'POST'])  # routes to Profile editing page
-@login_required
-def editUserProfile():
-    if request.method == 'POST':
-        current_user.id = request.form.get('id')
-        current_user.firstName = request.form.get('firstName')
-        current_user.email = request.form.get('email')
-        current_user.password = request.form.get('password')
-        db.session.commit()
-        flash('Your changes have been saved.')
-        return redirect(url_for('user-profile'))
-
-    return render_template("edit-user-profile.html", user=current_user)
 
 
 @auth.route('/addbrand', methods=['GET', 'POST'])
@@ -390,9 +376,6 @@ def deleteitem(id):
         print(e)
         return redirect(url_for('a.getCart'))
 
-
-
-
 @auth.route('/addwish', methods=['POST', 'GET'])
 def AddWish():
     try:
@@ -434,7 +417,6 @@ def checkout():
 
 @auth.route('/discounts')  # creates a page for discount offers
 def discounts():
-
     return render_template("discounts.html",user = current_user)
 
 
@@ -455,6 +437,4 @@ def get_contact():
     else:
         return render_template('contact.html', user = current_user, form=form)
 
-
-    return render_template("discounts.html", user=current_user)
 
