@@ -96,15 +96,8 @@ def delete_user():
 
 
 
-@auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
-@login_required
-def userProfile():
-    user = User.query.filter_by(id=current_user.id).first_or_404()
-    return render_template("user-profile.html", user=current_user)
 
 
-@auth.route('/edit-user-profile')  # routes to Profile editing page
-def editUserProfile():
 @auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
 @login_required
 def userProfile():
