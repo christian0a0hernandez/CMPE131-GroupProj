@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from .models import User, Brand, Category, Addproduct
-from . import db, photos
+from . import db, photos, search
 from .forms import Addproducts
 from flask_login import login_user, login_required, logout_user, current_user
+
 
 auth = Blueprint('a', __name__)
 
@@ -105,7 +106,7 @@ def addbrand():
         getbrand = request.form.get('brand')
         brand = Brand(name=getbrand)
         db.session.add(brand)
-        flash(f'Brand "{getbrand}" added!', 'success')
+        flash(f'Genre "{getbrand}" added!', 'success')
         db.session.commit()
         return redirect(url_for('a.addbrand'))
 
@@ -118,7 +119,7 @@ def addcategory():
         getbrand = request.form.get('category')
         category = Category(name=getbrand)
         db.session.add(category)
-        flash(f'Category "{getbrand}" added!', 'success')
+        flash(f'Artist "{getbrand}" added!', 'success')
         db.session.commit()
         return redirect(url_for('a.addbrand'))
 
@@ -386,6 +387,12 @@ def AddWish():
 @auth.route('/wish')
 def getWish():
     return render_template('/wish.html', user = current_user)
+
+@auth.route('/result')
+def result():
+    searchword = request.args.get('q')
+    products = Addproduct.query.msearch(searchword, fields =['name','description'], limit = 3)
+    return render_template('result.html',products = products,user = current_user)
 
 @auth.route('/checkout')  # creates a page for checkouts
 def checkout():

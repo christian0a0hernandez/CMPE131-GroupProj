@@ -42,10 +42,12 @@
 
         </div>
     </div>
-        <div class = "search-box">
-        <input class = "search-txt" type ="text" name ="" placeholder="Enter Search">
-        <a class ="search-btn" hred="#">
+          <form class="form-inline my-2 my-lg-0" action="{{url_for('a.result')}}">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
+            <button class="btn my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </a>
+
         <img class="featurette-image img-fluid mx-auto" src="https://cdn.discordapp.com/attachments/708927751591297064/975678816586448936/20220516_0139100.5850418015452257.png" alt="Logo" width="50" height="50" align="right">
 
         </div>
