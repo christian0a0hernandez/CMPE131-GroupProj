@@ -2,9 +2,12 @@
 {% block dablock %}
 
 <div class = "container">
-    <div class ="row">
+    <div class = "text-center">
         {% if brands %}
+        <h1 > Add a Genre! </h1>
+
         <h1> Add a genre! </h1>
+
         <div class ="col-md-3"></div>
         <div class ="col-md-6"></div>
         {% endif %}
@@ -15,6 +18,10 @@
             </form>
             {% else %}
         <h1>Add an Artist! </h1>
+
+        <div class ="col-md-3"></div>
+        <div class ="col-md-6"></div>
+
             <form action ="" method ="POST">
                 <input type ="text" name ="category" class = "form-control">
                 <input type ="submit" value ="Add artist" class ="btn btn-info mt-2">
@@ -26,12 +33,25 @@
     <footer class="my-5 pt-5 text-muted text-center text-small">
       <p class="mb-1">&copy; 2022-2022 Vinyl Hills</p>
       <ul class="list-inline">
-        <li class="list-inline-item"><a href="#">Privacy</a></li>
         <li class="list-inline-item"><a href="/returnpolicy">Terms</a></li>
-        <li class="list-inline-item"><a href="#">Support</a></li>
+        <li class="list-inline-item"><a href="/contact">Support</a></li>
       </ul>
     </footer>
                                               
 </div>
+
+<style>
+    body {
+    background-image: url('https://www.rappick.com/wp-content/uploads/2021/12/columbus-airport-showcases-ohio-artists-with-new-pilot-program-during-busy-travel-season-spectrum-news-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+    h1 {
+    color:white;
+    padding-bottom: 1rem;
+    background-color: rgba(10,10,10,0.50)
+    }
+</style>
 
 {%endblock dablock %}

@@ -1,6 +1,14 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from .models import User, Brand, Category, Addproduct
+
+from . import db, photos
+from .forms import Addproducts, ContactForm
+from flask_login import login_user, login_required, logout_user, current_user
+import pandas as pd
+
+
 from . import db, photos, search
+
 from .forms import Addproducts
 from flask_login import login_user, login_required, logout_user, current_user
 
@@ -86,6 +94,17 @@ def delete_user():
     return render_template("delete.html", user=current_user)
 
 
+@auth.route('/user-profile')  # routes to user Profile page; still need to test
+def userProfile():
+    name = "Christian Hernandez"
+    vinylsSold = "241"
+    followers = "841"
+    return render_template("user-profile.html", name=name, vinylsSold=vinylsSold, followers=followers,
+                           user=current_user)
+
+
+@auth.route('/edit-user-profile')  # routes to Profile editing page
+def editUserProfile():
 @auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
 @login_required
 def userProfile():
@@ -104,6 +123,7 @@ def editUserProfile():
         db.session.commit()
         flash('Your changes have been saved.')
         return redirect(url_for('user-profile'))
+
     return render_template("edit-user-profile.html", user=current_user)
 
 
@@ -120,7 +140,13 @@ def addbrand():
     return render_template('addbrand.html', user=current_user, brands='brands')
 
 
+
+@auth.route('/genre', methods=['GET', 'POST'])
+
+
+
 @auth.route('/addcategory', methods=['GET', 'POST'])
+
 def addcategory():
     if request.method == "POST":
         getbrand = request.form.get('category')
@@ -408,4 +434,27 @@ def checkout():
 
 @auth.route('/discounts')  # creates a page for discount offers
 def discounts():
+
+    return render_template("discounts.html",user = current_user)
+
+
+@auth.route('/contact', methods=["GET","POST"])
+def get_contact():
+    form = ContactForm()
+    # here, if the request type is a POST we get the data on contact
+    #forms and save them else we return the contact forms html page
+    if request.method == 'POST':
+        name = request.form["name"]
+        email = request.form["email"]
+        subject = request.form["subject"]
+        message = request.form["message"]
+        res = pd.DataFrame({'name':name, 'email':email, 'subject':subject,'message':message}, index=[0])
+        res.to_csv('./contactusMessage.csv')
+        msg = "The data are saved !"
+        return render_template('contact.html', user = current_user, msg =msg)
+    else:
+        return render_template('contact.html', user = current_user, form=form)
+
+
     return render_template("discounts.html", user=current_user)
+
