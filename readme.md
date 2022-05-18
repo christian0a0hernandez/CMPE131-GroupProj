@@ -6,43 +6,54 @@ for products, checkout products,manage inventory, add products, add artists and 
 developed by utilizing the flask platform and using the python programming language with HTML as well. It uses 
 a database system to store & edit various types of products and user profiles. 
 # Software Functionality # 
+
 ## Homepage ##
-(image)
 Upon accessing the website, the top of the homepage has a taskbar directory that allows you to navigate through
 various pages built within the website. The middle of the page has several hyperlinks that direct you to our category,
 contact and promotional page. The bottom of the home page has a description of the developers behind this website. 
+![Homepage](https://user-images.githubusercontent.com/28847753/168972705-65b519dd-745b-4b68-b2a6-6d4bd03ebbc9.png)
+
 
 ## Signup ##
-(image)
 Our signup page is easy and simple enough for new users to create a profile on our website and get started! The page 
 requires new users to input their email address, first name and password. If you try to create an account with 
 an email address from an existing profile, it will not let you.
+![signup](https://user-images.githubusercontent.com/28847753/168972780-cb933365-becb-4b2f-bc9e-459a6c191b0d.png)
+
+
+## User Profile ##
+Once the user has created their VinylHill accountand signed in, they can view their profile where it has their recent 
+viwed listings of products, contact infomation and ability to be message. In addition the edit button allows users
+to edit their profile!
+![Userprofile](https://user-images.githubusercontent.com/28847753/168975554-580a0e73-2a85-414e-8016-0a0b77ab627d.png)
+
+
+## Delete Account ##
+Exsting users can delete their account and thier listings by seleting the Delete Account hyperlink
+![Deleteaccount](https://user-images.githubusercontent.com/28847753/168974481-5dbfc12a-ba47-4ea0-b6be-99c03e5b8cfd.png)
+
 
 ## Inventory ##
-(Image) 
 Once you are logged in, select the store page where you will see the products we have for sale. The inventory catalog
 can be updated by users who wish to sell their own vinyls!
+![inventory](https://user-images.githubusercontent.com/28847753/168972811-8807a1f0-4130-4212-9021-71eb04bd3c58.png)
+
 
 ## Add product ##
-(image)
 The add product page allows users to list their vinyls for sale hassle free! Our user-friendly design makes it easy enough
 for new product listings to include the name, price, discount, genre,artist, stock and a description of the listing. 
+![addnewproduct](https://user-images.githubusercontent.com/28847753/168972949-603f5960-d288-4a7c-9ce6-029a09ff3528.png)
+
 
 ## Promotional page ##
-(image) 
 The website offers various promitional deals for buying customers. Simply use the promo code in the check out page.  
+![promo](https://user-images.githubusercontent.com/28847753/168972959-3787755b-0803-4b25-b76a-45c13f68a052.png)
+
 
 ## Checkout ##
-(image)
 Our checkout page allows you to input your personal information for shipping and payment options. Enter the promocode to 
 reveive a discount off your order!
-
-
-
-
-
-
-
+![checkout](https://user-images.githubusercontent.com/28847753/168972979-c4719ff8-f117-4fd3-b258-42376ca40029.png)
 
 
 ## Team Members ##
@@ -91,7 +102,7 @@ Make sure you have the latest version of Python and select it as the programs in
 ## Viewing The App ##
 Go to `http://127.0.0.1:5000` on your web browser
 
-# Tutorial 
+# Descriptive Tutorial 
 
 ### Sign Up
 In order for users to create an account on the site they must enter the required information.
