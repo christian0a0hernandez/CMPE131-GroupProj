@@ -15,6 +15,8 @@
 13. Wish List - Steven
 14. Checkout - Inderpreet Singh
 15. Support Page (Contact Us) - Inderpreet Singh
+16. Add a genre - Steven
+17. Add an Artist - Steven
 
 ## Non-functional Requirements
 

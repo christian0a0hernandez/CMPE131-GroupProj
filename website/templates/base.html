@@ -22,8 +22,6 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-        <img class="featurette-image img-fluid mx-auto" src="https://cdn.discordapp.com/attachments/708927751591297064/975678816586448936/20220516_0139100.5850418015452257.png" alt="Logo" width="40" height="50" align="right">
-
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="/home" class="nav-link px-2 text-secondary">Home</a></li>
         </ul>
@@ -32,22 +30,15 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="/inventory" class="nav-link px-2 text-white">Store</a></li>
                 <li><a href="/addproduct" class="nav-link px-2 text-white">+Product</a></li>
+                <li><a href="/addbrand" class="nav-link px-2 text-white">+Genre</a></li>
+                <li><a href="/addcategory" class="nav-link px-2 text-white">+Artist</a></li>
                 <li><a href="/discounts" class="nav-link px-2 text-white">Offers</a></li>
-                <li><a href="/user-profile" class="nav-link px-2 text-white">View Profile</a></li>
-                <li><a href="/edit-user-profile" class="nav-link px-2 text-white">Edit Profile</a></li>
+                <li><a href="/userProfile" class="nav-link px-2 text-white">View Profile</a></li>
                 <li><a href="/delete" class="nav-link px-2 text-white">Delete Account</a></li>
                 <li><a href="/checkout" class="nav-link px-2 text-white">Checkout</a></li>
                 <li><a href="/logout" class="nav-link px-2 text-white">Logout</a></li>
             </ul>
 
-            <a class ="nav-item nv-link" id="addproduct" href="/addproduct">|        Add a Product    |</a>
-            <a class ="nav-item nv-link" id="addbrand" href="/addbrand">|        Add a genre    |</a>
-            <a class ="nav-item nv-link" id="addcategory" href="/addcategory">|        Add an artist    |</a>
-
-            <a class ="nav-item nv-link" id="logout" href="/logout">|        Logout    |</a>
-            <a class ="nav-item nv-link" id="userProfile" href="/userProfile">|       View Profile    |</a>
-            <a class ="nav-item nv-link" id="editUserProfile" href="/editUserProfile">|        Edit Profile    |</a>
-            <a class ="nav-item nv-link" id="checkout" href="/checkout">|        Checkout    |</a>
 
             {% else %}
             <div class="text-end">
@@ -55,14 +46,15 @@
                     <li><a href="/login" class="nav-link px-2 text-white">Login</a></li>
                     <li><a href="/sign-up" class="nav-link px-2 text-white">Sign-up</a></li>
 
-
                 </ul>
             </div>
             {% endif %}
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-white">Policies</a></li>
+
                     <li><a href="/carts" class="nav-link px-2 text-white">Shopping Cart</a></li>
                     <li><a href="/wish" class="nav-link px-2 text-white">Wish list</a></li>
+                </ul>
+
                 </ul>
             </form>
 

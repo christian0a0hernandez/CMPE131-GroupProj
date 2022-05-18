@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from .models import User, Brand, Category, Addproduct
-
+import pytest as pytest
 from . import db, photos
 from .forms import Addproducts, ContactForm
 from flask_login import login_user, login_required, logout_user, current_user
@@ -95,26 +95,15 @@ def delete_user():
 
 
 
+
+
+
 @auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
 @login_required
 def userProfile():
     user = User.query.filter_by(id=current_user.id).first_or_404()
     return render_template("user-profile.html", user=current_user)
 
-
-@auth.route('/editUserProfile', methods=['GET', 'POST'])  # routes to Profile editing page
-@login_required
-def editUserProfile():
-    if request.method == 'POST':
-        current_user.id = request.form.get('id')
-        current_user.firstName = request.form.get('firstName')
-        current_user.email = request.form.get('email')
-        current_user.password = request.form.get('password')
-        db.session.commit()
-        flash('Your changes have been saved.')
-        return redirect(url_for('user-profile'))
-
-    return render_template("edit-user-profile.html", user=current_user)
 
 
 @auth.route('/addbrand', methods=['GET', 'POST'])
@@ -374,7 +363,6 @@ def deleteitem(id):
         print(e)
         return redirect(url_for('a.getCart'))
 
-
 @auth.route('/addwish', methods=['POST', 'GET'])
 def AddWish():
     try:
@@ -411,7 +399,14 @@ def result():
 
 @auth.route('/checkout')  # creates a page for checkouts
 def checkout():
-    return render_template("checkout.html", user=current_user)
+    subtotal = 0
+    grandtotal = 0
+    for key, product in session ['Shoppingcart'].items():
+        discount = (product['discount']/100) * float(product['price'])
+        subtotal += float(product['price']) * int(product['quantity'])
+        subtotal -= discount
+        grandtotal = subtotal
+    return render_template("checkout.html", user=current_user, grandtotal = grandtotal)
 
 
 @auth.route('/discounts')  # creates a page for discount offers
@@ -431,9 +426,17 @@ def get_contact():
         message = request.form["message"]
         res = pd.DataFrame({'name':name, 'email':email, 'subject':subject,'message':message}, index=[0])
         res.to_csv('./contactusMessage.csv')
-        msg = "The data are saved !"
-        return render_template('contact.html', user = current_user, msg =msg)
+        return render_template('contact.html', user = current_user, form=form)
     else:
         return render_template('contact.html', user = current_user, form=form)
 
 
+@pytest.mark.parametrize(('email', 'password', 'message'), (
+    ('a@c.com', '123', b'Incorrect username'),
+    ('cat@cat.com', '123', b'Incorrect password'),
+))
+def login_test(email, password, message):
+    response = auth.login(email, password)
+    assert current_user.email == email
+    assert current_user.password == password
+    assert message in response.data
