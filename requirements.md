@@ -9,7 +9,7 @@
 7. My Shopping Cart -Steven
 8. Return policy -Joe
 9. Discount promotions -Inderpreet
-10. Stock Check -Steven
+10. Item Stock -Steven
 11. User Reviews -Joe
 12. User profiles -Christian
 13. Wish List - Steven
