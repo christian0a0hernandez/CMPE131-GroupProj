@@ -124,20 +124,20 @@
 	Return policies are shown.
 
 
-6. About
+6. Contact us
 - **Precondition:** User is on the website
 
-- **Trigger:** User presses About button
+- **Trigger:** User presses Support/contact us button
 
 - **Primary Sequence:**
-	1. User presses the About button.
-	2. User sees the About details and description about the project/website
+	1. User is directed to form to submit to us.
+	2. User enters information to contact us with.
+	3. User hits submit
 
-- **Primary Postcondition:** Description about the website is shown.
+- **Primary Postcondition:** We are forwarded with information from the user
 
 - **Alternate Sequence:**
-	1. User presses the About button.
-	2. User sees the website description and details.
-	3. User navigates away from About.
+	1. User clicks away from form and redirected to another page
+
 
 
