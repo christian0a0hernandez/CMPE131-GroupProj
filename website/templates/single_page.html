@@ -31,6 +31,24 @@
             <button type ="submit" class ="btn btn-sm btn-warning"> Add to wishlist</button>
         </form>
         <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <button id="like" >Like</button>
+                <script>
+                    const btn = document.getElementById('like');
+                    const btn2 = document.getElementById('unlike');
+
+                    btn.addEventListener('click', function onClick() {
+                        btn.style.backgroundColor = 'salmon';
+                        btn.style.color = 'white';
+                        btn2.style.backgroundColor = 'blue';
+                        btn2.style.color = 'red';
+                    });
+                </script>
+            </div>
+        </div>
+
+
 
         <div class="row">
             <div class="col-sm-12">
