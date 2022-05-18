@@ -1,3 +1,4 @@
+import pytest as pytest
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from .models import User, Brand, Category, Addproduct
 
@@ -31,6 +32,16 @@ def login():
             flash("Email doesn't exist", category='error')
 
     return render_template("login.html", user=current_user)
+
+@pytest.mark.parametrize(('email', 'password', 'message'), (
+    ('a@c.com', '123', b'Incorrect username'),
+    ('cat@cat.com', '123', b'Incorrect password'),
+))
+def login_test(email, password, message):
+    response = auth.login(email, password)
+    assert current_user.email == email
+    assert current_user.password == password
+    assert message in response.data
 
 
 @auth.route('/logout')  # creates a page for log out
