@@ -1,12 +1,15 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from .models import User, Brand, Category, Addproduct
-
+import pytest as pytest
+from . import db, photos
 from .forms import Addproducts, ContactForm
+from flask_login import login_user, login_required, logout_user, current_user
 import pandas as pd
 
 
 from . import db, photos, search
 
+from .forms import Addproducts
 from flask_login import login_user, login_required, logout_user, current_user
 
 
@@ -95,17 +98,13 @@ def delete_user():
 
 
 
-@auth.route('/user-profile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
+@auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
 @login_required
 def userProfile():
     user = User.query.filter_by(id=current_user.id).first_or_404()
     return render_template("user-profile.html", user=current_user)
 
 
-@auth.route('/edit-user-profile')  # routes to Profile editing page
-@login_required
-def editUserProfile():
-    return render_template("edit-user-profile.html", user=current_user)
 
 @auth.route('/addbrand', methods=['GET', 'POST'])
 def addbrand():
@@ -120,13 +119,7 @@ def addbrand():
     return render_template('addbrand.html', user=current_user, brands='brands')
 
 
-
-@auth.route('/genre', methods=['GET', 'POST'])
-
-
-
 @auth.route('/addcategory', methods=['GET', 'POST'])
-
 def addcategory():
     if request.method == "POST":
         getbrand = request.form.get('category')
@@ -326,7 +319,7 @@ def AddCart():
         if product_id and quantity and request.method == "POST":
             DictItems = {product_id: {'name': product.name, 'price': product.price, 'discount': product.discount,
                                       'quantity': quantity, 'image': product.image_1}}
-            if 'Shoppingcart' in session:
+            if 'Shopcart' in session:
                 print(session['Shoppingcart'])
                 if product_id in session['Shoppingcart']:
                     print("Item already in cart")
@@ -334,7 +327,7 @@ def AddCart():
                 session['Shoppingcart'] = MagerDicts(session['Shoppingcart'], DictItems)
                 return redirect(request.referrer)
         else:
-            session['Shoppingcart'] = DictItems
+            session['Shoppingcart'] =DictItems
             return redirect (request.referrer)
     except Exception as e:
         print(e)
@@ -379,7 +372,7 @@ def AddWish():
         if product_id and quantity and request.method == "POST":
             DictItems = {product_id: {'name': product.name, 'price': product.price, 'discount': product.discount,
                                       'quantity': quantity, 'image': product.image_1}}
-            if 'ShoppingcartWish' in session:
+            if 'ShopcartWish' in session:
                 print(session['ShoppingcartWish'])
                 if product_id in session['ShoppingcartWish']:
                     print("Item already in cart")
@@ -406,7 +399,14 @@ def result():
 
 @auth.route('/checkout')  # creates a page for checkouts
 def checkout():
-    return render_template("checkout.html", user=current_user)
+    subtotal = 0
+    grandtotal = 0
+    for key, product in session ['Shoppingcart'].items():
+        discount = (product['discount']/100) * float(product['price'])
+        subtotal += float(product['price']) * int(product['quantity'])
+        subtotal -= discount
+        grandtotal = subtotal
+    return render_template("checkout.html", user=current_user, grandtotal = grandtotal)
 
 
 @auth.route('/discounts')  # creates a page for discount offers
@@ -430,12 +430,13 @@ def get_contact():
     else:
         return render_template('contact.html', user = current_user, form=form)
 
-@auth.route('/like_action/<int:product_id>/<action>')
-@login_required
-def like_action(product_id, action):
-    product = Addproduct.query.filter_by(id=product_id).first_or_404()
-    if action == 'like':
-        return redirect('single_page')
-    if action == 'unlike':
-        return redirect('single_page')
-    return redirect('single_page')
+
+@pytest.mark.parametrize(('email', 'password', 'message'), (
+    ('a@c.com', '123', b'Incorrect username'),
+    ('cat@cat.com', '123', b'Incorrect password'),
+))
+def login_test(email, password, message):
+    response = auth.login(email, password)
+    assert current_user.email == email
+    assert current_user.password == password
+    assert message in response.data
