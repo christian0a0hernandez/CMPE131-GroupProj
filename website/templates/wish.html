@@ -13,7 +13,7 @@
              <th>Delete</th>
              </thead>
              <tbody>
-             {% for key, product in session['Shoppingcart'].items() %}
+             {% for key, product in session['ShoppingcartWish'].items() %}
              <tr>
                  <td>{{product.name}}</td>
                  <td><img src="{{url_for('static',filename='images/'+ product.image)}}" alt="{{product.name}}" width="50" height="45"></td>

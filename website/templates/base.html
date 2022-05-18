@@ -22,8 +22,6 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-        <img class="featurette-image img-fluid mx-auto" src="https://cdn.discordapp.com/attachments/708927751591297064/975678816586448936/20220516_0139100.5850418015452257.png" alt="Logo" width="40" height="50" align="right">
-
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li><a href="/home" class="nav-link px-2 text-secondary">Home</a></li>
         </ul>
@@ -40,14 +38,6 @@
                 <li><a href="/logout" class="nav-link px-2 text-white">Logout</a></li>
             </ul>
 
-            <a class ="nav-item nv-link" id="addproduct" href="/addproduct">|        Add a Product    |</a>
-            <a class ="nav-item nv-link" id="addbrand" href="/addbrand">|        Add a genre    |</a>
-            <a class ="nav-item nv-link" id="addcategory" href="/addcategory">|        Add an artist    |</a>
-
-            <a class ="nav-item nv-link" id="logout" href="/logout">|        Logout    |</a>
-            <a class ="nav-item nv-link" id="userProfile" href="/userProfile">|       View Profile    |</a>
-            <a class ="nav-item nv-link" id="editUserProfile" href="/editUserProfile">|        Edit Profile    |</a>
-            <a class ="nav-item nv-link" id="checkout" href="/checkout">|        Checkout    |</a>
 
             {% else %}
             <div class="text-end">
@@ -59,14 +49,12 @@
             </div>
             {% endif %}
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-white">Policies</a></li>
+                    <li><a href="/returnpolicy" class="nav-link px-2 text-white">Policies</a></li>
 
                     <li><a href="/carts" class="nav-link px-2 text-white">Shopping Cart</a></li>
                     <li><a href="/wish" class="nav-link px-2 text-white">Wish list</a></li>
                 </ul>
 
-                </ul>
-            </form>
 
             </div>
         </div>

@@ -6,7 +6,6 @@ from . import db
 
 
 class Addproduct(db.Model):
-    __searchable__ = ['name','description']
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     price = db.Column(db.Numeric(10, 2), nullable=False)
@@ -25,8 +24,11 @@ class Addproduct(db.Model):
     image_2 = db.Column(db.String(150), nullable=False, default='image.jpg')
     image_3 = db.Column(db.String(150), nullable=False, default='image.jpg')
 
+    #likes = db.relationship('LikedPosts', backref='post', lazy='dynamic')
+
     def __repr__(self):
         return '<Addproduct %r>' % self.title
+
 
 class User(db.Model, UserMixin):  # creates a user
 
@@ -44,16 +46,3 @@ class Brand(db.Model):  # creates a brand
 class Category(db.Model):  # creates a category
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), nullable=False, unique=True)
-
-
-
-
-
-
-
-
-
-
-
-
-

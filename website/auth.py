@@ -1,15 +1,12 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for, session
 from .models import User, Brand, Category, Addproduct
 
-from . import db, photos
 from .forms import Addproducts, ContactForm
-from flask_login import login_user, login_required, logout_user, current_user
 import pandas as pd
 
 
 from . import db, photos, search
 
-from .forms import Addproducts
 from flask_login import login_user, login_required, logout_user, current_user
 
 
@@ -98,13 +95,17 @@ def delete_user():
 
 
 
-@auth.route('/userProfile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
+@auth.route('/user-profile', methods=['GET', 'POST'])  # routes to user Profile page; still need to test
 @login_required
 def userProfile():
     user = User.query.filter_by(id=current_user.id).first_or_404()
     return render_template("user-profile.html", user=current_user)
 
 
+@auth.route('/edit-user-profile')  # routes to Profile editing page
+@login_required
+def editUserProfile():
+    return render_template("edit-user-profile.html", user=current_user)
 
 @auth.route('/addbrand', methods=['GET', 'POST'])
 def addbrand():
@@ -325,7 +326,7 @@ def AddCart():
         if product_id and quantity and request.method == "POST":
             DictItems = {product_id: {'name': product.name, 'price': product.price, 'discount': product.discount,
                                       'quantity': quantity, 'image': product.image_1}}
-            if 'Shopcart' in session:
+            if 'Shoppingcart' in session:
                 print(session['Shoppingcart'])
                 if product_id in session['Shoppingcart']:
                     print("Item already in cart")
@@ -333,7 +334,7 @@ def AddCart():
                 session['Shoppingcart'] = MagerDicts(session['Shoppingcart'], DictItems)
                 return redirect(request.referrer)
         else:
-            session['Shoppingcart'] =DictItems
+            session['Shoppingcart'] = DictItems
             return redirect (request.referrer)
     except Exception as e:
         print(e)
@@ -378,7 +379,7 @@ def AddWish():
         if product_id and quantity and request.method == "POST":
             DictItems = {product_id: {'name': product.name, 'price': product.price, 'discount': product.discount,
                                       'quantity': quantity, 'image': product.image_1}}
-            if 'ShopcartWish' in session:
+            if 'ShoppingcartWish' in session:
                 print(session['ShoppingcartWish'])
                 if product_id in session['ShoppingcartWish']:
                     print("Item already in cart")
@@ -425,9 +426,16 @@ def get_contact():
         message = request.form["message"]
         res = pd.DataFrame({'name':name, 'email':email, 'subject':subject,'message':message}, index=[0])
         res.to_csv('./contactusMessage.csv')
-        msg = "The data are saved !"
-        return render_template('contact.html', user = current_user, msg =msg)
+        return render_template('contact.html', user = current_user, form=form)
     else:
         return render_template('contact.html', user = current_user, form=form)
 
-
+@auth.route('/like_action/<int:product_id>/<action>')
+@login_required
+def like_action(product_id, action):
+    product = Addproduct.query.filter_by(id=product_id).first_or_404()
+    if action == 'like':
+        return redirect('single_page')
+    if action == 'unlike':
+        return redirect('single_page')
+    return redirect('single_page')
