@@ -87,7 +87,7 @@ There are 4 non- functional requirments:
 `pip install Flask-Reuploaded`
 `pip install flask-msearch`
 `pip install pandas`
-`pip install pytest'
+`pip install pytest`
 
 
 ##  Installtion & Setup  ##
